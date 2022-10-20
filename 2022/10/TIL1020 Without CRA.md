@@ -38,9 +38,9 @@ npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/preset-re
 
 이후 Babel이 정상 작동할 수 있도록 설정을 해 주어야 합니다.
 
-```bash
-# babel.config.json
+<code>babel.config.json</code> 생성 후 작성
 
+```json
 {
   "presets": [
     "@babel/preset-env",
@@ -78,8 +78,8 @@ npm install --save-dev babel-loader css-loader sass sass-loader style-loader
 npm install --save-dev html-webpack-plugin
 ```
 
-```bash
-# webpack.config.js
+```js
+// webpack.config.js
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
@@ -145,17 +145,83 @@ module.exports = {
 }
 ```
 
-
 #### TypeScript
 
+```bash
+npm install --save-dev typescript @types/react @types/react-dom
+```
+
+<code>tsconfig.json</code>
+```json
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "jsx": "react-jsx",
+    "esModuleInterop": true
+  },
+  "include": ["src", "src/custom.d.ts"]
+}
+```
+
+```typescript
+// src/custom.d.ts
+
+declare module '*.jpg' {
+  const value: string;
+  export = value;
+}
+```
 
 #### React
 
+```bash
+npm install react react-dom
+```
 
-### Redux
+```html
+<!-- public/index.thml -->
 
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+```
+
+```jsx
+// src/App.tsx
+
+function App() {
+  return <div>Hello World</div>;
+}
+export default App;
+```
+
+```jsx
+// src/index.tsx
+
+import ReactDOM from "react-dom/client";
+import App from "./App";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
+```
+
+```bash
+npm start
+```
+
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/85447054/197007313-94d595e9-5f70-429d-81be-762656ae34c1.png">
+
+
+#### ESLint, Prettier
 
 ### 참고
 [CRA 없이 React 앱 설정하기](https://medium.com/@uk960214/create-react-app-cra-%EC%97%86%EC%9D%B4-react-%EC%95%B1-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0-typescript-eslint-prettier-dfa783ef0b26)
-
-[벨로퍼트 님 블로그](https://react.vlpt.us/redux/01-keywords.html)
