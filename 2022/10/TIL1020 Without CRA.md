@@ -38,8 +38,6 @@ npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/preset-re
 
 이후 Babel이 정상 작동할 수 있도록 설정을 해 주어야 합니다.
 
-<code>babel.config.json</code>를 생성해 주시고,
-
 ```bash
 # babel.config.json
 
@@ -59,6 +57,93 @@ npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/preset-re
 
 #### Webpack
 
+```bash
+npm install --save-dev webpack webpack-cli webpack-dev-server
+```
+
+<code>webpack</code> 핵심 작동 코드가 담겨 있는 패키지
+
+<code>webpack-cli</code> webpack을 cli 통해 실행하기 위한 패키지
+
+<code>webpack-dev-server</code> 개발할 때 활용하는 개발 서버를 활용하기 위한 설정을 가능하게 하는 패키지
+
+다음은 webpack에서 사용할 loader와 플러그인을 설치합니다.
+
+```bash
+# loader
+npm install --save-dev babel-loader css-loader sass sass-loader style-loader
+
+# 플러그인
+# 번들링 후 출력된 파일을 자동으로 불러오는 HTML 파일을 생성하는 데에 사용한다.
+npm install --save-dev html-webpack-plugin
+```
+
+```bash
+# webpack.config.js
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+
+module.exports = {
+  entry: './src/index.tsx', // 앱 소스코드 중 최상단 모듈의 경로로 설정하며, 대부분 src/index.js가 역할을 합니다.
+  
+  // 변환하고 번들링 된 파일을 어느 디렉토리에 어떤 파일명으로 저장할 지에 대한 설정입니다.
+  output: {
+    path: path.resolve(__dirname, 'dist'), // 경로 설정 위해 path 모듈 불러옵니다.
+    filename: 'main.[hash].js',
+    clean: true,
+  },
+  module: {
+    rules: [
+    // 각각의 loader를 설정합니다.
+    // 구성요소는 test, exclude, use로 이루어져 있습니다.
+      { // js와 react
+        test: /\.(js|jsx|ts|tsx)$/,
+        exclude: /(node_modules)/,
+        use: 'babel-loader',
+      },
+      { // css
+        test: /\.s?css$/,
+        use: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          },
+          { loader: 'sass-loader' },
+        ],
+      },
+      { // image
+        test: /\.(png|jpe?g|gif|ico)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[hash][ext][query]',
+        },
+      }
+    ],
+  },
+  // 개발 서버 설정
+  devServer: {
+    static: { // static 파일 위치를 나타내며, 기본으로는 public입니다.
+      directory: path.join(__dirname, 'public'),
+    },
+      historyApiFallback: true,
+      compress: true,
+      port: 3000,
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, './public/index.html'),
+    }),
+  ],
+  resolve: {
+    extensions: ['.js', '.ts', '.jsx', '.tsx'],
+  },
+  mode: process.env.production === 'true' ? 'production' : 'development'
+}
+```
 
 
 #### TypeScript
