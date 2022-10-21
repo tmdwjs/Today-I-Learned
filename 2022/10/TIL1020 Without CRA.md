@@ -1,19 +1,18 @@
 ## TIL 2022 10 20
 
-### Create React App 없이 리액트 환경 세팅
+### Create React App 없이 React 환경 세팅 下
 
-[이전 글 보기](https://github.com/BaikSeungJeon/TIL/blob/main/2022/10/TIL1019%20Webpack%20Babel.md)
+[Create React App 없이 React 환경 세팅 上](https://github.com/BaikSeungJeon/TIL/blob/main/2022/10/TIL1019%20Webpack%20Babel.md)
 
-#### 리액트 앱 구성 요소
+#### React 앱 구성 요소
 - React, React Dom
-- React 기반으로 작성된 코드를 번들링 할 번들러(웹팩)
-- 번들러에서 리액트의 JSX를 JS로 변환해 줄 트랜스파일러(바벨)
+- React 기반으로 작성된 코드를 번들링 할 번들러(= 웹팩)
+- 번들러에서 리액트의 JSX를 JS로 변환해 줄 트랜스파일러(= 바벨)
 
-추가적으로
-- 타입스크립트
-- ESLint와 Prettier
+이어 아래의 내용을 더 추가적으로 세팅할 예정입니다.
 
-와 같이 존재합니다.
+- TypeScript
+- ESLint, Prettier
 
 #### npm init
 
