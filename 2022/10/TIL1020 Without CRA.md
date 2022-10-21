@@ -279,7 +279,7 @@ npm install --save-dev prettier eslint-plugin-prettier eslint-config-prettier
     "plugin:react-hooks/recommended", 
     "prettier",
   ],
-};
+}
 ```
 
 <code>.prettierrc.json</code>
