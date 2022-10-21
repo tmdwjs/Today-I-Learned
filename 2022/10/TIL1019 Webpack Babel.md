@@ -2,7 +2,7 @@
 
 ### Create React App 없이 React 환경 세팅 上
 
-[🔗 Create React App 없이 React 환경 세팅 下](https://github.com/BaikSeungJeon/TIL/blob/main/2022/10/TIL1020%20Without%20CRA.md)
+[Create React App 없이 React 환경 세팅 下](https://github.com/BaikSeungJeon/TIL/blob/main/2022/10/TIL1020%20Without%20CRA.md)
 
 작년 면접에서 'Create React App(이하 CRA)를 사용해서 리액트를 개발하셨네요?'라는 말을 들었고(떨어짐)
 
