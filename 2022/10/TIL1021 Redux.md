@@ -13,6 +13,7 @@
 세상 모든 일 장단점이 있기 때문에, 이중 커뮤니티와 스터디원, 그 외 레퍼런스 등 무의식적으로 친숙하게 자리 잡은 redux를 먼저 접하게 되었습니다.
 
 ### Redux 키워드
+<code>action</code> <code>action creator</code> <code>initialState</code> <code>reducer</code> <code>store</code> <code>dispatch</code> <code>subscribe</code>
 
 #### Action(액션)
 
@@ -55,7 +56,7 @@ const decrease = () => {
 // redux에서 관리할 상태 정의
 
 const initialState = {
-  // 추후 실제 개발 내용 작성 예정
+  // 내용 작성
 }
 ```
 
