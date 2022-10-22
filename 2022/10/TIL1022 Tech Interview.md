@@ -124,4 +124,5 @@ parseResult(handlePlus(5);
 ### 참고
 
 [트리 쉐이킹 예시 및 학습 도움](https://sihus.tistory.com/46)
+
 [default export를 피해야 하는 이유](https://iborymagic.tistory.com/113)
