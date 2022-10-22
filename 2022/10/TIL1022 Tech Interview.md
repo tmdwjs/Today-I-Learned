@@ -17,6 +17,7 @@ function ex() { // 지역(함수) 스코프
   var a = 2;
   console.log(a);
 }
+
 ex(a); // 2
 console.log(a); // 1
 ```
@@ -32,6 +33,7 @@ var a = 1; // 전역 스코프
 function ex() { // 지역(함수) 스코프
   console.log(a);
 }
+
 ex(a); // 1
 ```
 
@@ -49,15 +51,16 @@ var x = 0;
   var x = 1; // 재할당
   console.log(x); // 1
 }
+
 console.log(x);   // 1
 
 // ES6 이후 let, const 추가로 let을 사용하여 블록 스코프 사용이 가능합니다.
-
 let y = 0;
 {
   let y = 1;
   console.log(y); // 1
 }
+
 console.log(y);   // 0
 ```
 
@@ -66,6 +69,7 @@ function solution(s) {
   for(var i = 0; i < 10; i++){
     ...
   }
+  
   console.log(i); // 10
 }
 ```
@@ -75,6 +79,7 @@ function solution(s) {
   for(let i = 0; i < 10; i++){
     ...
   }
+  
   console.log(i); // ReferenceError
 }
 ```
@@ -94,7 +99,7 @@ import utils from 'utils-lib';
 let count = 0;
 
 const handlePlus = (a) => {
-	count += a	
+  count += a	
 };
 
 utils.parseResult(handlePlus(5));
@@ -108,7 +113,7 @@ import { parseResult } from 'utils-lib'
 let count = 0;
 
 const handlePlus = (a) => {
-	count += a
+  count += a
 };
 
 parseResult(handlePlus(5);
