@@ -1,7 +1,5 @@
 ## TIL 2022 10 20
 
-> CRA 없이 리액트 설치 전, 웹팩과 바벨에 대해 궁금하신 분은 하단 태그를 클릭해 주세요.
-
 <code>[TIL1019 Webpack Babel](https://github.com/BaikSeungJeon/TIL/blob/main/2022/10/TIL1019%20Webpack%20Babel.md)</code>
 
 #### React 앱 구성 요소
