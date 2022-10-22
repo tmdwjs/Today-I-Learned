@@ -125,4 +125,4 @@ store의 <code>내장 함수</code> 중 하나이며, 디스패치는 액션을 
 store의 <code>내자 함수</code> 중 하나이며, subscribe은 함수 형태의 값을 파라미터로 받아 옵니다.
 
 ### 참고
-[벨로퍼트 리덕스](https://react.vlpt.us/redux/)
+[벨로퍼트 님 블로그](https://react.vlpt.us/redux/)
