@@ -10,6 +10,197 @@ with <code>React</code> <code>Redux</code> <code>TypeScript</code>
 #### 작성 코드
 
 ```js
+// src/modules/counter.ts
+// action 타입 지정
+// as const를 지정해 줌으로써, 액션 객체에서 action.type을 만들 때
+// string이 아닌, 실제 문자열 값으로 추론 되게끔 해 준다.
+
+const INCREASE = 'counter/INCEASE' as const;
+const DECREASE = 'counter/DECREASE' as const;
+const INCREASE_BY = 'counter/INCREASE_BY' as const;
+
+// action creator 선언
+
+export const increase = () => ({
+  type: INCREASE
+})
+
+export const decrease = () => ({
+  type: DECREASE
+})
+
+export const increaseBy = (diff: number) => ({
+  type: INCREASE_BY,
+  payload: diff
+})
+
+// action과 state의 type 지정(typescript)
+
+type CounterAction =
+  | ReturnType<typeof increase>
+  | ReturnType<typeof decrease>
+  | ReturnType<typeof increaseBy>;
+
+type CounterState = {
+  count: number;
+};
+
+// initial State
+
+const initialState: CounterState = {
+  count: 0
+};
+
+// reducer
+
+function counter(
+  state: CounterState = initialState,
+  action: CounterAction):CounterState {
+    switch(action.type){
+      case INCREASE:
+        return {
+          count: state.count + 1
+        }
+
+      case DECREASE:
+        return {
+          count: state.count - 1
+        }
+
+      case INCREASE_BY:
+        return {
+          count: state.count + action.payload
+        }
+
+      default:
+        return state
+    }
+}
+
+export default counter;
+```
+
+```js
+// src/modules/index.ts
+
+import { combineReducers } from "redux";
+import counter from "./counter";
+
+const rootReducer = combineReducers({
+  counter
+});
+
+export default rootReducer;
+
+export type RootState = ReturnType<typeof rootReducer>;
+
+
+```
+
+```js
+// src/index.tsx
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from './modules';
+
+const store = createStore(rootReducer);
+
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement
+);
+root.render(
+  <Provider store={store}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+```
+
+```js
+// src/components/Counter.tsx
+
+import React from 'react';
+
+type CounterProps = {
+  count: number;
+  onIncrease: () => void;
+  onDecrease: () => void;
+  onIncreaseBy: (diff: number) => void;
+}
+
+function Counter({ count, onIncrease, onDecrease, onIncreaseBy }: CounterProps) {
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={onIncrease}>+1</button>
+      <button onClick={onDecrease}>-1</button>
+      <button onClick={() => onIncreaseBy(10)}>+10</button>
+    </div>
+  );
+}
+
+export default Counter;
+```
+
+```js
+// src/containers/CounterContainer.tsx
+
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../modules';
+import { increase, decrease, increaseBy } from '../modules/counter';
+import Counter from '../components/Counter';
+
+const CounterContainer = () => {
+  // 상태를 조회합니다.
+  // 상태를 조회 할 때에는 state의 타입을 RootState 로 지정해 줘야 합니다.
+  const count = useSelector((state: RootState) => state.counter.count);
+  const dispatch = useDispatch(); // 디스패치 함수를 가져옵니다.
+
+  // action들을 dispatch 하는 함수
+  const onIncrease = () => dispatch(increase());
+  const onDecrease = () => dispatch(decrease());
+  const onIncreaseBy = (diff: number) => dispatch(increaseBy(diff));
+
+  return (
+    <Counter
+      count={count}
+      onIncrease={onIncrease}
+      onDecrease={onDecrease}
+      onIncreaseBy={onIncreaseBy}
+    />
+  );
+};
+
+export default CounterContainer;
+```
+
+```js
+// src/App.tsx
+
+import React from 'react';
+import CounterContainer from './containers/CounterContainer';
+
+function App() {
+  return (
+    <div className="App">
+      <CounterContainer />
+    </div>
+  );
+}
+
+export default App;
 ```
 
 ### 출처
