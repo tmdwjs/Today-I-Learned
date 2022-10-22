@@ -1,8 +1,8 @@
 ## TIL 2022 10 20
 
-### Create React App 없이 React 환경 세팅 下
+> CRA 없이 리액트 설치 전, 웹팩과 바벨에 대해 궁금하신 분은 하단 태그를 클릭해 주세요.
 
-[Create React App 없이 React 환경 세팅 上](https://github.com/BaikSeungJeon/TIL/blob/main/2022/10/TIL1019%20Webpack%20Babel.md)
+<code>[TIL1019 Webpack Babel](https://github.com/BaikSeungJeon/TIL/blob/main/2022/10/TIL1019%20Webpack%20Babel.md)</code>
 
 #### React 앱 구성 요소
 - React, React Dom
@@ -16,9 +16,7 @@
 
 #### npm init
 
-리액트 앱 설정 과정에서 npm 패키지 매니저를 사용할 것이기 때문에,
-
-<code>npm init</code> 명령어를 사용하여 <code>package.json</code>을 생성하고 패키지를 설치 관리합니다.
+리액트 앱 설정 과정에서 npm 패키지 매니저를 사용할 것이기 때문에, <code>npm init</code> 명령어를 사용하여 <code>package.json</code>을 생성하고 패키지를 설치 관리합니다.
 
 #### babel
 
@@ -52,9 +50,7 @@ npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/preset-re
 }
 ```
 
-
 > 🙋‍♂️ 왜 <code>@babel/preset-react</code>만 배열 형태인가요?
-
 
 리액트 17에서 추가된 기능으로, <code>automatic</code>로 설정 시, JSX에서 리액트를 실제 import 해 오지 않더라도 자동으로 해석해 주기 때문입니다.
 
