@@ -14,7 +14,7 @@
 
 ### Redux 규칙
 
-1. 하나의 애플리케이션 안에는 하나의 스토어가 존재합니다.
+#### 하나의 애플리케이션 안에는 하나의 스토어가 존재합니다.
 
 여러 개의 스토어를 사용하는 것은 가능하나 권장하지 않습니다.
 
@@ -22,21 +22,35 @@
 
 이렇게 되면 개발 도구를 활용하지 못 하게 됩니다.
 
-2. 상태는 읽기 전용입니다.
+#### 상태는 읽기 전용입니다.
 
-리액트에서 state 업데이트 시 <code>setState</code>를 사용하고,
-
-배열 업데이트 시 배열에 <code>push</code>가 아닌, <code>concat</code>를 사용,
+리액트는 state 업데이트 시 <code>setState</code>를 사용하고, 배열 업데이트 시 배열에 <code>push</code>가 아닌, <code>concat</code>를 사용,
 
 객체 업데이트 시 spread 연산자 <code>(...)</code> 사용 등 원본은 건드리지 않는 형태입니다.
 
-리덕스도 맟나가지로, <code>불변성</code<를 유지해야 하는데요.
-  
-불변성을 유지해야 하는 이유는 내부적으로 데이터가 변경되는 것을 감지해
-  
-<code>shallow equality</code> 검사를 진행하기 때문입니다.
-  
+리덕스도 마찬가지로, <code>불변성</code>를 유지해야 하는데요.
 
+불변성을 유지해야 하는 이유는 내부적으로 데이터가 변경되는 것을 감지해 <code>shallow equality</code> 검사를 진행하기 때문입니다.
+
+> shallow equality는 무엇인가요?
+
+얕은 동등성 검사라고 부르며 서로 다른 객체(a, b)인 경우 단순하게 a === b만 체크해도 다른지 알아내는 검사입니다.
+
+객체의 변화를 감지할 때 객체의 깊은 곳까지 검사<code>deep equality</code>하지 않아 좋은 성능을 유지할 수 있습니다.
+
+#### Reducer는 순수한 함수여야 합니다.
+
+- 리듀서 함수는 <code>이전 상태</code>와, <code>액션 객체</code>를 파라미터로 밥습니다.
+- 이전 상태는 건드리지 않고, 변화를 일으킨 새로운 상태 객체를 반환합니다.
+- 똑같은 파라미터로 호출된 리듀서는 **언제나 똑같은 결과값을 반환**해야 합니다.
+  
+즉, 동일한 input은 동일한 output이 존재해야 합니다.
+
+만약 <code>new Date()</code> <code>Math.Random()</code>을 사용한 랜덤한 숫자 생성 등
+  
+리듀스 함수에서는 순수하지 않은 작업으로써 리듀서 함수 바깥에서 처리를 해 줘야 합니다.
+  
+그리고 이런 것들을 하기 위해 <code>리덕스 미들웨어</code>를 사용하며 이는 다음에 다루도록 하겠습니다.
 
 ### Redux 키워드
 <code>action</code> <code>action creator</code> <code>initialState</code> <code>reducer</code> <code>store</code> <code>dispatch</code> <code>subscribe</code>
@@ -126,12 +140,15 @@ ReactDOM.render(
     <App />
   </Provider>
 );
-
-// 현재 redux 버전에서는 ~~createStore~~에 이처럼 취소선이 그어집니다.
-// @reduxjs/tooklit의 사용을 권장하기 위한 유도라고 하는데요.
-// 이를 사용하기 위해선 redux v4.2.0 버전으로 버전을 낮추는 방법이 있습니다.
-// 가장 최신 버전으로 학습하지 않아 레거시 코드가 존재할 수 있습니다.
 ```
+
+현재 redux 버전에서는 ~~createStore~~에 이처럼 취소선이 그어집니다.
+
+<code>@reduxjs/tooklit</code>의 사용을 권장하기 위한 유도라고 하는데요.
+
+이를 사용하기 위해선 redux v4.2.0 버전으로 버전을 낮추는 방법이 있습니다.
+
+가장 최신 버전으로 학습하지 않아 레거시 코드가 존재할 수 있습니다.
 
 #### dispatch
 
