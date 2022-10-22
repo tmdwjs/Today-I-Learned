@@ -11,6 +11,6 @@
 ### Commit Convention
 > 수시로 업데이트가 일어나기 때문에 커밋 메시지를 잘 봐 주세요.
 
-💁‍♂️ <code> 상태 : 연월일 / TIL월일</code><br>
-🙆‍♂️ <code> create : 2022 10 18 / TIL1018 </code><br>
-🙆‍♂️ <code> update : 2022 10 20 / TIL1018 </code>
+💁‍♂️ <code> 상태 : TIL월일 / 연월일 </code><br>
+🙆‍♂️ <code> create : TIL1018 / 2022 10 18 </code><br>
+🙆‍♂️ <code> update : TIL1018 / 2022 10 21 </code>
