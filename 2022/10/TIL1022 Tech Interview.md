@@ -60,6 +60,24 @@ let y = 0;
 console.log(y);   // 0
 ```
 
+```js
+function solution(s) {
+  for(var i = 0; i < 10; i++){
+    ...
+  }
+  console.log(i); // 10
+}
+```
+
+```js
+function solution(s) {
+  for(let i = 0; i < 10; i++){
+    ...
+  }
+  console.log(i); // ReferenceError
+}
+```
+
 
 ### 트리쉐이킹(Tree Shaking)
 
@@ -101,7 +119,7 @@ parseResult(handlePlus(5);
 
 원티드 챌린지를 통해, 챌린지에 참여하신 분들 중 한 분이 면접에서 **스코프**와 **트리쉐이킹**에 대해 질문을 받았다는 이야기를 듣고 한 번 정리해 봤습니다.
 
-실제로 
+실제로 **스코프**의 경우 과거 프로그래머스에서 코딩 테스트를 푸는 와중에, 어떤 분께서 for문을 돌릴 때 변수 i를 <code>let</code>이 아닌 <code>var</code>로 선언한 것을 본 적이 있는데요. 
 
 ### 참고
 
