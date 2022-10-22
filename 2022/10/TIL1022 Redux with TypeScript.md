@@ -11,31 +11,27 @@ with <code>React</code> <code>Redux</code> <code>TypeScript</code>
 
 ```js
 // src/modules/counter.ts
-// action 타입 지정
-// as const를 지정해 줌으로써, 액션 객체에서 action.type을 만들 때
-// string이 아닌, 실제 문자열 값으로 추론 되게끔 해 준다.
 
+// action
+// as const를 지정해 줌으로써, 액션 객체에서 action.type을 만들 때
+// string이 아닌, 실제 문자열 값으로 추론 되게끔 해 줍니다.
 const INCREASE = 'counter/INCEASE' as const;
 const DECREASE = 'counter/DECREASE' as const;
 const INCREASE_BY = 'counter/INCREASE_BY' as const;
 
-// action creator 선언
-
+// action 생성 함수
 export const increase = () => ({
   type: INCREASE
 })
-
 export const decrease = () => ({
   type: DECREASE
 })
-
 export const increaseBy = (diff: number) => ({
   type: INCREASE_BY,
   payload: diff
 })
 
-// action과 state의 type 지정(typescript)
-
+// action과 state의 type(typescript)
 type CounterAction =
   | ReturnType<typeof increase>
   | ReturnType<typeof decrease>
@@ -46,13 +42,11 @@ type CounterState = {
 };
 
 // initial State
-
 const initialState: CounterState = {
   count: 0
 };
 
 // reducer
-
 function counter(
   state: CounterState = initialState,
   action: CounterAction):CounterState {
@@ -83,18 +77,18 @@ export default counter;
 ```js
 // src/modules/index.ts
 
-import { combineReducers } from "redux";
-import counter from "./counter";
+import { combineReducers } from "redux"; // root Reducer
+import counter from "./counter"; // counter module
 
 const rootReducer = combineReducers({
   counter
+  // 추후 module 개발 시 계속 추가
 });
 
 export default rootReducer;
 
+// CounterContainer에서 사용 위해 export
 export type RootState = ReturnType<typeof rootReducer>;
-
-
 ```
 
 ```js
@@ -104,9 +98,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import rootReducer from './modules';
+import { createStore } from 'redux'; // createStore
+import { Provider } from 'react-redux'; // Provider
+import rootReducer from './modules'; // rootReducer
 
 const store = createStore(rootReducer);
 
@@ -121,10 +115,7 @@ root.render(
   </Provider>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+...
 ```
 
 ```js
@@ -166,9 +157,9 @@ const CounterContainer = () => {
   // 상태를 조회합니다.
   // 상태를 조회 할 때에는 state의 타입을 RootState 로 지정해 줘야 합니다.
   const count = useSelector((state: RootState) => state.counter.count);
-  const dispatch = useDispatch(); // 디스패치 함수를 가져옵니다.
+  const dispatch = useDispatch(); // 디스패치 함수를 가져 옵니다.
 
-  // action들을 dispatch 하는 함수
+  // action들을 dispatch 하는 함수입니다.
   const onIncrease = () => dispatch(increase());
   const onDecrease = () => dispatch(decrease());
   const onIncreaseBy = (diff: number) => dispatch(increaseBy(diff));
@@ -195,7 +186,7 @@ import CounterContainer from './containers/CounterContainer';
 function App() {
   return (
     <div className="App">
-      <CounterContainer />
+      <CounterContainer /> {/* Component Container */}
     </div>
   );
 }
