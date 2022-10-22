@@ -60,6 +60,7 @@ let y = 0;
 console.log(y);   // 0
 ```
 
+
 ### 트리쉐이킹(Tree Shaking)
 
 번들의 크기를 줄이거나, 번들링 시간을 줄이기 위해 **불필요한 코드를 제거**하는 모습을 '나무를 흔든다'는 행동에 묘사해 명명한 단어입니다.
@@ -94,7 +95,13 @@ const handlePlus = (a) => {
 parseResult(handlePlus(5);
 ```
 
-이처럼 가끔 거대한 객체를 <code>default export</code> 하여 <code>import</code> 해 오고 그 안에서 필요한 메서드를 꺼내 사용하는 경우가 있는데요. 필요한 부분만 <code>named export</code> 하여 <code>import</code> 한다면, 트리쉐이킹을 통해 번들 사이즈를 줄일 수 있다고 합니다. 그런 의미에서 default export를 피해야 
+이처럼 가끔 거대한 객체를 <code>default export</code> 하여 <code>import</code> 해 오고 그 안에서 필요한 메서드를 꺼내 사용하는 경우가 있는데요. 필요한 부분만 <code>named export</code> 하여 <code>import</code> 한다면, 트리쉐이킹을 통해 번들 사이즈를 줄일 수 있다고 합니다. 그런 의미에서 default export를 피해야 하는 이유에 대해 작성한 블로그 URL를 하단에 첨부해 놓겠습니다.
+
+### 배운 점
+
+원티드 챌린지를 통해, 챌린지에 참여하신 분들 중 한 분이 면접에서 **스코프**와 **트리쉐이킹**에 대해 질문을 받았다는 이야기를 듣고 한 번 정리해 봤습니다.
+
+실제로 
 
 ### 참고
 
