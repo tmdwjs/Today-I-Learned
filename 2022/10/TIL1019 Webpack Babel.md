@@ -1,7 +1,5 @@
 ## TIL 2022 10 19
 
-> Create React App 없이 리액트 환경 세팅은 아래 태그를 클릭해 주세요.
-
 <code>[TIL1020 Without CRA](https://github.com/BaikSeungJeon/TIL/blob/main/2022/10/TIL1020%20Without%20CRA.md)</code>
 
 해당 프로젝트는 작년 면접에서 'Create React App(이하 CRA)를 사용해서 리액트를 개발하셨네요?'라는 말을 들었고(떨어짐) 이후 'CRA를 사용하면 순수 리액트를 할 수 있다 하면 안되나?' 생각만 하다가, 다시 취업 준비를 하며 한 번 정도는 경험해 보고 싶다고 생각하게 된 뻔한 레파토리를 가지고 있습니다.
