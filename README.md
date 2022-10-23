@@ -5,8 +5,8 @@
 ### Folder Structure
 > Today I Learned에 맞게, 폴더를 내용이 아닌 날짜로 구분합니다.
 
-💁‍♂️ <code> 연 / 월 / TIL월일 제목.md </code><br>
-🙆‍♂️ <code> 2022 / 10 / TIL1018 Tech Interview.md </code>
+💁‍♂️ <code> 연 / 월 / TIL일 제목.md </code><br>
+🙆‍♂️ <code> 2022 / 10 / TIL18 Tech Interview.md </code>
 
 ### Commit Convention
 > 잘못된 정보 기록을 지양하기 위해 가끔 업데이트가 일어납니다.
@@ -16,3 +16,5 @@
 💁‍♂️ <code> 상태 : 연월일 </code><br>
 🙆‍♂️ <code> create : 2022 10 18 </code><br>
 🙆‍♂️ <code> update : 2022 10 21 </code>
+
+### Contents
