@@ -2,7 +2,7 @@
 
 <code>[TIL1019 Webpack Babel](https://github.com/BaikSeungJeon/TIL/blob/main/2022/10/TIL1019%20Webpack%20Babel.md)</code>
 
-#### React 앱 구성 요소
+### React 앱 구성 요소
 - React, React Dom
 - React 기반으로 작성된 코드를 번들링 할 번들러(= 웹팩)
 - 번들러에서 리액트의 JSX를 JS로 변환해 줄 트랜스파일러(= 바벨)
@@ -12,11 +12,11 @@
 - TypeScript
 - ESLint, Prettier
 
-#### npm init
+### npm init
 
 리액트 앱 설정 과정에서 npm 패키지 매니저를 사용할 것이기 때문에, <code>npm init</code> 명령어를 사용하여 <code>package.json</code>을 생성하고 패키지를 설치 관리합니다.
 
-#### babel
+### babel
 
 ```bash
 # babel 설치
@@ -52,7 +52,7 @@ npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/preset-re
 
 리액트 17에서 추가된 기능으로, <code>automatic</code>로 설정 시, JSX에서 리액트를 실제 import 해 오지 않더라도 자동으로 해석해 주기 때문입니다.
 
-#### Webpack
+### Webpack
 
 ```bash
 # webpack 설치
@@ -146,7 +146,7 @@ module.exports = {
 }
 ```
 
-#### TypeScript
+### TypeScript
 
 ```bash
 # TypeScript 설치
@@ -177,7 +177,7 @@ declare module '*.jpg' {
 }
 ```
 
-#### React
+### React
 
 ```bash
 # React, React Dom 설치
@@ -229,7 +229,7 @@ npm start
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/85447054/197007313-94d595e9-5f70-429d-81be-762656ae34c1.png">
 
 
-#### ESLint, Prettier
+### ESLint, Prettier
 
 사실 위에 과정만 거쳐도 '리액트 앱 환경 세팅'은 끝이 났지만,
 지난 팀 과제를 통해 ESLinst와 Prettier 설치 및 중요성에 대해 알았고, 추가적으로 설치해 보기로 했습니다.
@@ -304,4 +304,5 @@ npm install --save-dev prettier eslint-plugin-prettier eslint-config-prettier
 > trailing comma는 리스트형 데이터를 선언할 때 맨 뒤에 붙는 comma를 의미합니다. 실수 방지 및 코드 관리의 용이함을 가지고 있습니다.
 
 ### 참고
+
 [CRA 없이 React 앱 설정하기](https://medium.com/@uk960214/create-react-app-cra-%EC%97%86%EC%9D%B4-react-%EC%95%B1-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0-typescript-eslint-prettier-dfa783ef0b26)
