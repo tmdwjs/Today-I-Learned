@@ -1,14 +1,14 @@
 ## TIL 2022 10 23
 
-### 문제
+### [프로그래머스] 타겟 넘버(자바스크립트/레벨 2)
+
+#### 문제
 
 https://school.programmers.co.kr/learn/courses/30/lessons/43165
 
-### 코드
+#### 코드
 
 ```js
-// 프로그래머스 / 타겟 넘버 / 자바스크립트 / 레벨 2
-
 function solution(numbers, target) {
   // numbers의 length만큼 반복문 돌아야 합니다.
   // numbers의 요소를 다 탐색한 상태에서 target과 같으면 answer를 카운팅 합니다.
