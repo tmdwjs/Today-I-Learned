@@ -17,4 +17,10 @@
 🙆‍♂️ <code> create : 2022 10 18 </code><br>
 🙆‍♂️ <code> update : 2022 10 21 </code>
 
-### Contents
+### Title
+> 주기적으로 하는 공부의 경우d 제목을 통일합니다.
+
+일일보고: <code>TIL00 Daily Report.md</code><br>
+알고리즘: <code>TIL00 Algorithm.md</code><br>
+기술면접: <code>TIL00 Tech Interview.md</code><br>
+기술공부: <code>TIL00 기술명.md</code>
