@@ -20,8 +20,9 @@
 ### Title
 > 주기적으로 하는 공부의 경우 제목을 통일합니다.
 
-🙆‍♂️ 일일기록: <code>TIL00 Daily Report.md</code><br>
-🙆‍♂️ 기술면접: <code>TIL00 Tech Interview.md</code><br>
-🙆‍♂️ 기술공부: <code>TIL00 Tech Name.md</code><br>
-🙆‍♂️ 알고리즘(이론): <code>TIL00 Algorithm.md</code><br>
-🙆‍♂️ 알고리즘(코테): <code>TIL00 CodingTest.md</code>
+💁‍♂️ 공백: <code>_</code> / 제목: <code>PascalCase.md</code><br>
+🙆‍♂️ 일일기록: <code>TIL00_DailyReport.md</code><br>
+🙆‍♂️ 기술면접: <code>TIL00_TechInterview.md</code><br>
+🙆‍♂️ 기술공부: <code>TIL00_TechName.md</code><br>
+🙆‍♂️ 알고리즘(이론): <code>TIL00_Algorithm.md</code><br>
+🙆‍♂️ 알고리즘(코테): <code>TIL00_CodingTest.md</code>
