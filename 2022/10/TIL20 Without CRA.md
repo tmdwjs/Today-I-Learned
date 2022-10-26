@@ -74,7 +74,7 @@ npm install --save-dev webpack webpack-cli webpack-dev-server
 npm install --save-dev babel-loader css-loader sass sass-loader style-loader
 
 # Plugin 설치
-# 번들링 후 출력된 파일을 자동으로 불러오는 HTML 파일을 생성하는 데에 사용한다.
+# 번들링 후 출력된 파일을 자동으로 불러오는 HTML 파일을 생성하는 데에 사용합니다.
 
 npm install --save-dev html-webpack-plugin
 ```
@@ -86,7 +86,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.tsx', // 앱 소스코드 중 최상단 모듈의 경로로 설정하며, 대부분 src/index.js가 역할을 한다.
+  entry: './src/index.tsx', // 앱 소스코드 중 최상단 모듈의 경로로 설정하며, 대부분 src/index.js가 역할을 합니다.
   
   // 변환하고 번들링 된 파일을 어느 디렉토리에 어떤 파일명으로 저장할 지에 대한 설정
   output: {
@@ -96,8 +96,8 @@ module.exports = {
   },
   module: {
     rules: [
-    // 각각의 loader를 설정한다.
-    // 구성요소는 test, exclude, use로 이루어져 있음.
+    // 각각의 loader를 설정.
+    // 구성요소는 test, exclude, use로 이루어져 있습니다.
       { // js와 react
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /(node_modules)/,
@@ -127,7 +127,7 @@ module.exports = {
   },
   // 개발 서버 설정
   devServer: {
-    static: { // static 파일 위치를 나타내며, 기본으로는 public
+    static: { // static 파일 위치를 나타내며, 기본으로는 public 폴더
       directory: path.join(__dirname, 'public'),
     },
       historyApiFallback: true,
