@@ -61,7 +61,6 @@ function increase() {
 }
 
 // 화살표 함수로도 작성이 가능합니다.
-
 const decrease = data => ({
   type: DECREASE,
   data // 액션 안에는 type 외에 추가적인 필드를 마음대로 작성이 가능합니다.
