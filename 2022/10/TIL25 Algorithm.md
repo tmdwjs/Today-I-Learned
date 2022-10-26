@@ -142,6 +142,6 @@ function solution(sticker) {
 }
 ```
 
-#### 참고
+### 참고
 
 [[프로그래머스] LV.3 스티커 모으기 (JS)](https://velog.io/@longroadhome/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-LV.3-%EC%8A%A4%ED%8B%B0%EC%BB%A4-%EB%AA%A8%EC%9C%BC%EA%B8%B0-JS)
