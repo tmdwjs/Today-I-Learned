@@ -38,20 +38,27 @@ https://school.programmers.co.kr/learn/courses/30/lessons/17677
 
 #### 풀이
 
-// splice(현재, 현재-2) > 즉 2자씩 나눈다는 의미.
-// 나와 내 앞까지 구하므로 반복문 시 length의 -1만큼 반복문을 돌려야 한다.
+<code>splice()</code> 메서드를 사용하여 2자씩 나눠줍니다.
+이때 <code>splice(현재, 현재-2)</code>와 같이 사용해주면 될 것 같습니다.
+나와 내 앞까지 구하므로 반복문 시 length의 -1만큼 반복문을 돌려야 합니다.
 
-// 대소문자 상관 안 한다 > toUpperCase or toLowerCase
-// Math.floor(교집합 수/합집합 수*65536)
+대소문자 상관 안 한다 했으니 <code>toUpperCase</code> 혹은 <code>toLowerCase</code> 둘 중 아무거나 선택하여 통일하고 문제 풀이를 진행합니다
+마지막으로 <code>교집합 수 / 합집합 수 * 65536</code>를 하여 return 해 주는데, 이를 <code>Math.floor()</code>에 담아 내림하여 return 합니다.
 
-// ab+ > ab/b+ > b+은 버림.
-// 이게 자른 후에 담으면서 버려야 할지, 먼저 버린 후에 자를지 고민해야 한다.
-// aabc+dde > aabcdde > aa/ab/bc/cd/dd/de > 6개
-// aabc+dde > aa/ab/bc/c+/+d/dd/de > aa/ab/bc/dd/de > 5개
-// 자른 후 알파벳만 남기면 될 것 같다.
+매겨변수에는 알파벳과 기호가 섞여 있습니다. 만약 임의로 <code>aabc+dde</code>가 매개변수로 넘어왔다고 가정하겠습니다.
+이게 자른 후에 담으면서 기호를 버려야 할지, 먼저 기호를 버린 후에 자를지 고민해야 하는데요.
 
-// 알파벳만 남기고 잘라서 return 해 주는 함수를 만든다.
-// 두 개씩 자른 후 정규표현식으로 알파벳만 걸러주고 소문자로 변환 후 배열에 담아 return.
+**기호 선 삭제 및 자르기**
+
+<code>aabc+dde</code> > <code>aabcdde</code> > <code>aa</code> <code>ab</code> <code>bc</code> <code>cd</code> <code>dd</code> <code>de</code> > 6개
+
+**자른 뒤 기호 미 포함**
+
+<code>aabc+dde</code> > <code>aa</code> <code>ab</code> <code>bc</code> <code>c+</code> <code>+d</code> <code>dd</code> <code>de</code> > <code>aa</code> <code>ab</code> <code>bc</code> <code>dd</code> <code>de</code> > 5개
+
+이처럼 순서에 따라 결과가 다르게 나오고, 문제에서 제시한 것처럼 먼저 문자를 자른 뒤 기호가 포함돼 있는 문자를 제거해주는 방법으로 수행해 줘야 합니다.
+
+알파벳만 남기고 잘라서 return 해 주는 함수를 만듭니다. 먼저 받아오는 매개변수를 해당 함수로 전송합니다. 함수를 거쳐 나오면 두 개씩 자른 후, 정규표현식으로 알파벳만 걸러주고 소문자로 변환 후 배열에 담긴 형태로 return 됩니다. 해당 데이터를 가지고 이어 풀이를 진행했습니다.
 
 #### 코드
 
@@ -68,7 +75,6 @@ function solution(str1, str2) {
   let union = new Set([...validStr1, ...validStr2]);
   
   union.forEach(elem => {
-      
     let filterStr1 = validStr1.filter(v => v === elem).length;
     let filterStr2 = validStr2.filter(v => v === elem).length;
 
@@ -102,18 +108,11 @@ https://school.programmers.co.kr/learn/courses/30/lessons/12971
 
 #### 풀이
 
-// 가장 큰 수를 떼는 게 중요한 게 아니라,
-// 큰 수를 뗌으로써 마지막과 두 번째가 나가리 되면 의미 없음.
+<code>첫 번째 선택 시</code> 두 번째와 마지막 스티커를 떼는 게 불가능 합니다.
+<code>두 번째 선택 시(= 첫 번째 선택 x)</code> 마지막 선택이 가능합니다.
+<code>세 번째 선택</code>부턴 첫 번째와 같기 때문에, 첫 번째 스티커와 두 번째 스티커를 제거하는 경우의 수만 구한 뒤, 이 둘을 비교하면 됩니다.
 
-// 첫 번째 선택 시 마지막 선택 못함
-// 첫 번째 선택 안 할 시, 마지막 선택 가능
-// 첫 번째 선택 or 두 번째 선택
-// 두 개 경우의 수를 다 돌려보고, 더 큰 수를 return.
-
-// 일단 초기화를 한다. 0에서부터 시작해 더해야 하니까
-// 현재 = 직전 vs 2번째 전 + 현재
-// i = i - 1 vs i - 2 + sticker[i]
-// 첫 번째 선택 시 i - 2가 음수가 되면 안 되니 sticker의 length에 +2만큼 해 주기.
+<code>dp[i]</code> = <code>dp[i-1]</code> vs <code>dp[i-2]</code> + <code>sticker[i]</code>
 
 #### 코드
 
@@ -142,3 +141,7 @@ function solution(sticker) {
   return Math.max(dp1[size-2], dp2[size-1]);
 }
 ```
+
+#### 참고
+
+[[프로그래머스] LV.3 스티커 모으기 (JS)](https://velog.io/@longroadhome/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-LV.3-%EC%8A%A4%ED%8B%B0%EC%BB%A4-%EB%AA%A8%EC%9C%BC%EA%B8%B0-JS)
