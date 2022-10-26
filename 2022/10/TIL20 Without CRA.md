@@ -74,7 +74,7 @@ npm install --save-dev webpack webpack-cli webpack-dev-server
 npm install --save-dev babel-loader css-loader sass sass-loader style-loader
 
 # Plugin 설치
-# 번들링 후 출력된 파일을 자동으로 불러오는 HTML 파일을 생성하는 데에 사용합니다.
+# 번들링 후 출력된 파일을 자동으로 불러오는 HTML 파일을 생성하는 데에 사용한다.
 
 npm install --save-dev html-webpack-plugin
 ```
@@ -86,18 +86,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.tsx', // 앱 소스코드 중 최상단 모듈의 경로로 설정하며, 대부분 src/index.js가 역할을 합니다.
+  entry: './src/index.tsx', // 앱 소스코드 중 최상단 모듈의 경로로 설정하며, 대부분 src/index.js가 역할을 한다.
   
-  // 변환하고 번들링 된 파일을 어느 디렉토리에 어떤 파일명으로 저장할 지에 대한 설정입니다.
+  // 변환하고 번들링 된 파일을 어느 디렉토리에 어떤 파일명으로 저장할 지에 대한 설정
   output: {
-    path: path.resolve(__dirname, 'dist'), // 경로 설정 위해 path 모듈 불러옵니다.
+    path: path.resolve(__dirname, 'dist'), // 경로 설정 위해 path 모듈 불러오기
     filename: 'main.[hash].js',
     clean: true,
   },
   module: {
     rules: [
-    // 각각의 loader를 설정합니다.
-    // 구성요소는 test, exclude, use로 이루어져 있습니다.
+    // 각각의 loader를 설정한다.
+    // 구성요소는 test, exclude, use로 이루어져 있음.
       { // js와 react
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /(node_modules)/,
@@ -127,7 +127,7 @@ module.exports = {
   },
   // 개발 서버 설정
   devServer: {
-    static: { // static 파일 위치를 나타내며, 기본으로는 public입니다.
+    static: { // static 파일 위치를 나타내며, 기본으로는 public
       directory: path.join(__dirname, 'public'),
     },
       historyApiFallback: true,
@@ -231,8 +231,7 @@ npm start
 
 ### ESLint, Prettier
 
-사실 위에 과정만 거쳐도 '리액트 앱 환경 세팅'은 끝이 났지만,
-지난 팀 과제를 통해 ESLinst와 Prettier 설치 및 중요성에 대해 알았고, 추가적으로 설치해 보기로 했습니다.
+사실 위에 과정만 거쳐도 '리액트 앱 환경 세팅'은 끝이 났지만, 지난 팀 과제를 통해 ESLinst와 Prettier 설치 및 중요성에 대해 알았고, 추가적으로 설치해 보기로 했습니다.
 
 ```bash
 # ESLint 설치
@@ -289,7 +288,7 @@ npm install --save-dev prettier eslint-plugin-prettier eslint-config-prettier
 }
 ```
 
-<code>tabWidth</code> 탭 스페이스 사이즈입니다. 2 혹은 4가 통상적인데, 취향에 맞게 설정하면 될 것 같습니다. 실제로 저는 2칸 들여쓰기를 선호합니다.
+<code>tabWidth</code> 탭 스페이스 사이즈. 2 혹은 4가 통상적인데, 취향에 맞게 설정하면 됩니다. 실제로 저는 2칸 들여쓰기를 선호합니다.
 
 <code>printWidth</code> 한 줄에서 wrap이 되는 글자수를 의미합니다. 80이 default입니다.
 
