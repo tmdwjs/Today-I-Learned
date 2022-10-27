@@ -22,7 +22,7 @@
 > 주기적으로 하는 공부의 경우 제목을 통일합니다.
 
 💁‍♂️ 공백: <code>_</code> / 제목: <code>PascalCase.md</code><br>
-🙆‍♂️ 일일기록: <code>TIL00_DailyReport.md</code><br>
+🙆‍♂️ 회고기록: <code>TIL00_Memoir.md</code><br>
 🙆‍♂️ 기술면접: <code>TIL00_TechInterview.md</code><br>
 🙆‍♂️ 기술공부: <code>TIL00_TechName.md</code><br>
 🙆‍♂️ 알고리즘(이론): <code>TIL00_Algorithm.md</code><br>
