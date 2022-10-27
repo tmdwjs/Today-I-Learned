@@ -152,18 +152,29 @@ b는 a의 주소값을 복사하였기 때문에 동일한 객체로 인식하�
 
 #### useMemo
 
+> 메모이제이션 된 값을 반환합니다.
 
+```js
+useMemo(param => v, [deps])
+```
 
 #### useCallback
 
-### NVM
+> 메모이제이션 된 함수를 반환합니다.
 
-#### NVM이란?
+```js
+useMemo(fn, [deps])
+```
 
-#### NVM 설치
+비슷하면서도 다른 둘의 차이점이라고 하면 앞서 말한 대로 <code>useMemo</code>는 의존성 배열의 값의 변경을 감지하여 캐싱된 값을 메모이제이션 하여 반환해주는 반면,
+<code>useCallback</code>은 의존성 배열의 값의 변경을 감지하여 캐싱된 함수 자체를 차이입니다. 
+
+이처럼 이론만 알고 간다면 적절한 상황에서 알맞은 사용이 가능한데요. 면접 준비용으로만 그치지 않고 직접 사용하여 실전 능력도 키울 필요가 있어 보입니다.
+
 
 ### 참고
 
 [쿠키 vs 세션 vs 웹 스토리지](https://ykss.netlify.app/web/storage_session_cookie/)
+
 [useMemo vs useCallback](https://leego.tistory.com/entry/React-useCallback%EA%B3%BC-useMemo-%EC%A0%9C%EB%8C%80%EB%A1%9C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0#:~:text=useCallback%20%EA%B3)
 
