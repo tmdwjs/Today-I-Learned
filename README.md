@@ -5,8 +5,8 @@
 ### Folder Structure
 > Today I Learned에 맞게, 폴더를 내용이 아닌 날짜로 구분합니다.
 
-💁‍♂️ <code> 연 / 월 / TIL일_제목.md </code><br>
-🙆‍♂️ <code> 2022 / 10 / TIL18_TechInterview.md </code>
+💁‍♂️ <code> 연 / 월 / TIL연월일_제목.md </code><br>
+🙆‍♂️ <code> 2022 / 10 / TIL221018_TechInterview.md </code>
 
 ### Commit Convention
 > 잘못된 정보 기록을 지양하기 위해 가끔 업데이트가 일어납니다.
@@ -21,9 +21,9 @@
 ### Title
 > 주기적으로 하는 공부의 경우 제목을 통일합니다.
 
-💁‍♂️ 공백: <code>_</code> / 제목: <code>PascalCase.md</code><br>
-🙆‍♂️ 일일기록: <code>TIL00_DailyRecord.md</code><br>
-🙆‍♂️ 기술면접: <code>TIL00_TechInterview.md</code><br>
-🙆‍♂️ 기술공부: <code>TIL00_TechName.md</code><br>
-🙆‍♂️ 알고리즘(이론): <code>TIL00_Algorithm.md</code><br>
-🙆‍♂️ 알고리즘(코테): <code>TIL00_CodingTest.md</code>
+💁‍♂️ 공백: <code>_</code> / 제목: <code>PascalCase</code><br>
+🙆‍♂️ 일일기록: <code>DailyRecord</code><br>
+🙆‍♂️ 기술면접: <code>TechInterview</code><br>
+🙆‍♂️ 기술공부: <code>TechName</code><br>
+🙆‍♂️ 알고리즘(이론): <code>Algorithm</code><br>
+🙆‍♂️ 알고리즘(코테): <code>CodingTest</code>
