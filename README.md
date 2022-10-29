@@ -19,10 +19,9 @@
 🙆‍♂️ <code> update : 2022 10 21 </code>
 
 ### Title
-> 주기적으로 하는 공부의 경우 제목을 통일합니다.
+> 주기적으로 학습하는 공통된 내용의 경우 제목을 통일합니다.
 
 💁‍♂️ 공백: <code>_</code> / 제목: <code>PascalCase</code><br>
 🙆‍♂️ 일일기록: <code>DailyRecord</code><br>
 🙆‍♂️ 알고리즘: <code>Algorithm</code><br>
-🙆‍♂️ 기술면접: <code>TechInterview</code><br>
-🙆‍♂️ 기술공부: <code>TechName</code><br>
+🙆‍♂️ 기술면접: <code>TechInterview</code>
