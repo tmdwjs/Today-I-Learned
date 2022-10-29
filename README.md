@@ -23,6 +23,6 @@
 
 💁‍♂️ 공백: <code>_</code> / 제목: <code>PascalCase</code><br>
 🙆‍♂️ 일일기록: <code>DailyRecord</code><br>
-🙆‍♂️ 알고리즘: <code>Algorithm</code>
+🙆‍♂️ 알고리즘: <code>Algorithm</code><br>
 🙆‍♂️ 기술면접: <code>TechInterview</code><br>
 🙆‍♂️ 기술공부: <code>TechName</code><br>
