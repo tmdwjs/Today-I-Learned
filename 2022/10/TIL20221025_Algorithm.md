@@ -1,10 +1,10 @@
 ## TIL 2022 10 25
 
-### [프로그래머스] 튜플(자바스크립트/레벨 2)
+### 프로그래머스
 
 #### 문제
 
-https://school.programmers.co.kr/learn/courses/30/lessons/43165
+[튜플(자바스크립트/레벨 2)](https://school.programmers.co.kr/learn/courses/30/lessons/43165)
 
 #### 코드
 
@@ -30,11 +30,9 @@ function solution(s) {
 }
 ```
 
-### [프로그래머스] [1차]뉴스클러스터링(자바스크립트/레벨 2)
-
 #### 문제
 
-https://school.programmers.co.kr/learn/courses/30/lessons/17677
+[[1차]뉴스클러스터링(자바스크립트/레벨 2)](https://school.programmers.co.kr/learn/courses/30/lessons/17677)
 
 #### 풀이
 
@@ -100,11 +98,9 @@ function valid(str) {
 }
 ```
 
-### [프로그래머스] 스티커 모으기(2)(자바스크립트/레벨 3)
-
 #### 문제
 
-https://school.programmers.co.kr/learn/courses/30/lessons/12971
+[스티커 모으기(2)(자바스크립트/레벨 3)](https://school.programmers.co.kr/learn/courses/30/lessons/12971)
 
 #### 풀이
 
