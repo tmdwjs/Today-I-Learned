@@ -1,10 +1,10 @@
 ## TIL 2022 10 23
 
-### [프로그래머스] 타겟 넘버(자바스크립트/레벨 2)
+### 프로그래머스
 
 #### 문제
 
-https://school.programmers.co.kr/learn/courses/30/lessons/43165
+[타겟 넘버(자바스크립트/레벨 2)](https://school.programmers.co.kr/learn/courses/30/lessons/43165)
 
 #### 코드
 
