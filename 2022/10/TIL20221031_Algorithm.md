@@ -112,7 +112,11 @@ console.log(answer_bfs.join(' '));
   <th>BFS</th>
   
   <tr>
-    <td>재귀, stack</td>
-    <td>queue</td>
+    <td>스택</td>
+    <td>큐</td>
+  </tr>
+  <tr>
+    <td>재귀 함수 사용</td>
+    <td>큐 자료 구조 사용</td>
   </tr>
 </table>
