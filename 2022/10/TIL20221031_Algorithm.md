@@ -90,7 +90,7 @@ bfs(start);
 console.log(answer_bfs.join(' '));
 ```
 
-#### DFS와 BFS
+### DFS와 BFS
 
 깊이 우선 탐색인 DFS(Depth First Search)와 너비 우선 탐색인 BFS(Breadth First Search)는 그래프 탐색 알고리즘의 대표적인 유형입니다.
 
@@ -98,7 +98,7 @@ console.log(answer_bfs.join(' '));
 
 여기서 그래프란 <code>정점(node)</code>과 그 정점을 연결하는 <code>간선(edge)</code>으로 이루어진 자료 구조입니다.
 
-다시 본론으로 돌아와 DFS와 BFS를 쉽게 드라마를 보는 유형에 비유해서 설명하면, DFS는 종결 후 몰아보는 유형, 즉 한 놈만 패는 유형이면 BFS는 매일 매일 방영할 때마다 여러 개의 드라마를 한 화씩
+다시 본론으로 돌아와 DFS와 BFS를 쉽게 드라마를 보는 유형에 비유해서 설명하면, <code>DFS</code>는 종결 후 몰아보는 유형, 즉 한 놈만 패는 유형이면 <code>BFS</code>는 매일 매일 방영할 때마다 여러 개의 드라마를 한 화씩
 보는 유형이라고 생각하면 쉽습니다. 저 역시 한 유튜버가 위처럼 설명해줘서 훨씬 이해하기가 빨랐습니다.
 
 위 두 알고리즘의 대표적인 문제 유형은 다음과 같습니다.
@@ -107,26 +107,12 @@ console.log(answer_bfs.join(' '));
 2. 네트워크 유형(연결)
 3. 조합 유형(모든 조합 만들기)
 
-그리고 아래는 DFS와 BFS를 비교한 테이블입니다.
-
 <table>
-  <th>특징</th>
   <th>DFS</th>
   <th>BFS</th>
   
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>재귀, stack</td>
+    <td>queue</td>
   </tr>
 </table>
