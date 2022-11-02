@@ -1,5 +1,9 @@
 ## TIL 2022 10 22
 
+### Today I Learned
+
+- Redux + TypeScript
+
 ### Counter App
 with <code>React</code> <code>Redux</code> <code>TypeScript</code>
 
