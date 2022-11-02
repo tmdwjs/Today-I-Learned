@@ -4,8 +4,6 @@
 
 - CRA 없이 리액트 환경 구성
 
-<code>[TIL1019 Webpack Babel](https://github.com/BaikSeungJeon/TIL/blob/main/2022/10/TIL1019%20Webpack%20Babel.md)</code>
-
 ### React 앱 구성 요소
 - React, React Dom
 - React 기반으로 작성된 코드를 번들링 할 번들러(= 웹팩)
