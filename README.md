@@ -25,3 +25,13 @@
 🙆‍♂️ 일일기록: <code>DailyRecord</code><br>
 🙆‍♂️ 알고리즘: <code>Algorithm</code><br>
 🙆‍♂️ 기술면접: <code>TechInterview</code>
+
+### Content
+> 불릿 스타일로 간단명료하게 TIL을 요약합니다.
+
+🙆‍♂️
+- 알고리즘
+  - 프로그래머스
+  - 백준
+- 기술 면접 스터디
+- 이력서 작성
