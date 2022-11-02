@@ -3,7 +3,7 @@
 ### Today I Learned
 
 - 프론트엔드 학습
-  - CRA 
+  - CRA 없이 리액트 학습
 
 <code>[TIL1019 Webpack Babel](https://github.com/BaikSeungJeon/TIL/blob/main/2022/10/TIL1019%20Webpack%20Babel.md)</code>
 
