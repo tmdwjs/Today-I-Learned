@@ -1,5 +1,11 @@
 ## TIL 2022 10 27
 
+### Today I Learned
+- 기업 면접(오전)
+- 기술 면접 스터디
+  - 쿠키 vs 세션 vs 웹 스토리지
+  - useMemo vs useEffect
+
 ### 쿠키 vs 세션 vs 웹 스토리지
 
 #### 인증
