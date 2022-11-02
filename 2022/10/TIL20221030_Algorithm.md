@@ -1,5 +1,9 @@
 ## TIL 2022 10 30
 
+### Today I Learned
+- 코딩 테스트
+  - 백준
+
 ### 백준
 
 <img width="859" alt="image" src="https://user-images.githubusercontent.com/85447054/198885645-18531168-c286-4e50-9856-2bed05e9b377.png">
