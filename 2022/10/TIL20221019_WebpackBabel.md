@@ -2,9 +2,7 @@
 
 ### Today I Learned
 
-- 프론트엔드 학습
-  - 웹팩
-  - 바벨
+- 웹팩과 바벨에 대한 이해 및 학습
 
 <code>[TIL1020 Without CRA](https://github.com/BaikSeungJeon/TIL/blob/main/2022/10/TIL1020%20Without%20CRA.md)</code>
 
