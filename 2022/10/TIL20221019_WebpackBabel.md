@@ -4,8 +4,6 @@
 
 - 웹팩과 바벨에 대한 이해 및 학습
 
-<code>[TIL1020 Without CRA](https://github.com/BaikSeungJeon/TIL/blob/main/2022/10/TIL1020%20Without%20CRA.md)</code>
-
 해당 프로젝트는 작년 면접에서 'Create React App(이하 CRA)를 사용해서 리액트를 개발하셨네요?'라는 말을 들었고(떨어짐) 이후 'CRA를 사용하면 순수 리액트를 할 수 있다 하면 안되나?' 생각만 하다가, 다시 취업 준비를 하며 한 번 정도는 경험해 보고 싶다고 생각하게 된 뻔한 레파토리를 가지고 있습니다.
 
 'CRA 없이 리액트 설치'라고만 검색해도 꼭 나오는 이야기가 웹팩과 바벨입니다. 당연한 게, <code>npx create-react-app my-app</code> 명령어 한 줄이면 리액트에서 개발할 수 있는 환경이 세팅이 되지만, CRA 없이 리액트 개발 환경을 세팅하다 보니 웹팩과 바벨을 직접 설정할 수밖에 없기 때문입니다.
