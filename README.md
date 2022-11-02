@@ -6,7 +6,7 @@
 > Today I Learned에 맞게, 폴더를 내용이 아닌 날짜로 구분합니다.
 
 💁‍♂️ <code> 연 / 월 / TIL연월일.md </code><br>
-🙆‍♂️ <code> 2022 / 10 / TIL221018.md </code>
+🙆‍♂️ <code> 2022 / 10 / TIL20221018.md </code>
 
 ### Commit Convention
 > 잘못된 정보 기록을 지양하기 위해 가끔 업데이트가 일어납니다.
