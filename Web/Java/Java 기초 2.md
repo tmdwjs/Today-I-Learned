@@ -1,15 +1,10 @@
 ## 2022 11 29 Today I Learned
 
-<pre>
-Java> + Compiler → bytecode<code>xxx.class</code>
-Interpreter(JVM) → 실행
-</pre>
-
----
-
 ### Namespace
 
 - 유니크한 이름을 구분해줄 수 있는 식별자
+
+---
 
 ### Package
 
@@ -23,6 +18,7 @@ Interpreter(JVM) → 실행
 자바에서 나오는 모든 class는 반드시 package로 묶어서 구현해야 하나, 명시하지 않으면 결국 default package로 묶이게 되고, default package는 지양하도록 합니다.
 
 #### package 네이밍 구조
+
 - damain의 역순으로 구성해 계층 구조를 이룬다.
   - e.g. www.abc.or.kr → kr.or.abc.프로젝트이름
 
