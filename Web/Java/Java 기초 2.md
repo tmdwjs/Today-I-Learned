@@ -143,3 +143,77 @@ field는 instance마다 각각 공간이 따로 생상된다. instance variable
 #### 객체 지향의 information hiding
 
 필드에서 public 사용 시, 아무 패키지에서 데이터 접근이 가능하기 때문에 특별한 경우가 아니고서야 public을 지양해야 합니다.
+
+---
+
+### 구현
+
+```java
+// Customer.java
+
+package bank;
+
+public class Customer {
+	// constructor
+	public Customer(String name) {
+		this.name = name;
+	}
+	
+	// field
+	public String name; // 고객 이름 > instance variable
+	public String accountNumber;  // 고객 계좌번호 > instance variable
+	public long balance;  // 잔액 > instance variable
+	
+	// method
+	public long getBalance() {
+		return this.balance;
+	}
+	
+	// void = return 값이 없음
+	public void deposit(long money) {
+		this.balance += money;
+	}
+	
+	public long withdraw(long money) {
+		if(this.balance < money) System.out.println("잔액 부족");
+		else this.balance -= money;
+		
+		return this.balance;
+	}
+}
+
+```
+
+```java
+Main.java
+
+package main;
+
+import bank.*; // bank로부터 패키지 import
+
+public class Main {
+// method는 entry point인 main method만 존재
+
+	public static void main(String[] args) {
+//		Customer hong = new Customer();
+//		hong.name = "홍길동";
+		
+		Customer hong = new Customer("홍길동");
+		
+		// 잔액 확인
+		long result = hong.getBalance();
+		System.out.println("초기 잔액은: " + result);
+		
+		// 입금
+		hong.deposit(2000);
+		result = hong.getBalance();
+		System.out.println("입금 후 잔액은: " + result);
+		
+		// 출금
+		hong.withdraw(1000);
+		result = hong.getBalance();
+		System.out.println("출금 후 잔액은: " + result);
+	}
+}
+
+```
