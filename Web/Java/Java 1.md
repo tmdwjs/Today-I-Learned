@@ -1,8 +1,4 @@
-## Today I Learned
-
-<code>Java</code>
-
----
+## 2022 11 28 Today I Learned
 
 ### 언어
 
