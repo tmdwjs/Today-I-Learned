@@ -32,7 +32,9 @@ compiler를 통한 compile
 > java source 코드 > xxx.java = 사람이 인식<br>
 > byte code의 확장자 > xxx.class = 바이트 코드, 아무도 인식 불가 
 
-#### JVM(Java Virtual Machine)
+---
+
+### JVM(Java Virtual Machine)
 
 <pre>
 JVM
@@ -115,8 +117,19 @@ bytecode를 읽어서 실행하는 방식 → <code>interpreter</code>
 
 이를 객체 지향에서 <code>추상화(Abstraction)</code>라고 하며, 이때 추상화 후 모델링 하는 도구가 <code>클래스</code>라고 합니다.
 
-#### Class 
+---
+
+### Class 
 > 현실의 객체를 추상화 해서 프로그램적으로 모델링 하기 위한 수단 = 객체 모델링의 수단
+
+#### Class 구조
+```java
+public class Class{
+  // constructor(생성자)
+  // field(0개 이상 존재)
+  // Method(0개 이상 존재)
+}
+```
 
 ---
 
@@ -144,15 +157,3 @@ bytecode를 읽어서 실행하는 방식 → <code>interpreter</code>
 - PascalCase
 - camelCase
 - snake_case
-
-#### Class 구조
-```java
-public class Class{
-  // constructor(생성자)
-  // field(0개 이상 존재)
-  // Method(0개 이상 존재)
-}
-
-```
-
-![image](https://user-images.githubusercontent.com/85447054/204246994-e21a2655-59ee-4e42-b017-6876019a51cb.png)
