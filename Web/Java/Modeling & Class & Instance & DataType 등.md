@@ -1,40 +1,34 @@
-## Today I Learned
+## 2022 11 29 Today I Learned
 
-<code>Java</code>
-
----
-
-> Java<code>xxx.java</code> + Compiler → bytecode<code>xxx.class</code><br>
-> Interpreter<code>JVM</code> → 실행
-
-코드가 아닌 class를 재활용 단위로 사용합니다.
+<pre>
+Java> + Compiler → bytecode<code>xxx.class</code>
+Interpreter(JVM) → 실행
+</pre>
 
 ---
 
 #### Namespace
-> 유니크한 이름을 구분해줄 수 있는 식별자
+
+- 유니크한 이름을 구분해줄 수 있는 식별자
 
 #### Package
-> class를 논리적으로 묶는 개념
 
-우리가 class를 사용할 때 package를 명시해야 합니다.
+- class를 논리적으로 묶는 개념
+- class 사용 시, package를 명시해야 합니다.
 
 #### default package
-> 명시하지 않으면 <code>default package</code>라는 특수한 package에 포함된다.
+
+- 명시하지 않으면 default package라는 특수한 package에 포함된다.
 
 자바에서 나오는 모든 class는 반드시 package로 묶어서 구현해야 하나, 명시하지 않으면 결국 default package로 묶이게 되고, default package는 지양하도록 합니다.
 
 #### package 네이밍 구조
-> damain의 역순으로 구성해 계층 구조를 이룬다.<br>
-> e. g. www.abc.or.kr → kr.or.abc.프로젝트이름
+- damain의 역순으로 구성해 계층 구조를 이룬다.
+  - e.g. www.abc.or.kr → kr.or.abc.프로젝트이름
 
-> 🙋‍♂️ 그럼 class 작성 시, package에 포함시키려면?
-```java
-package package명;
-```
+- pacakge를 물리적으로 묶을 땐 folder로 구분이 된다.<br>
+  - e.g. kr.or.abc.프로젝트명
 
-> pacakge를 물리적으로 묶을 땐 folder로 구분이 된다.<br>
-> e. g. kr.or.abc.프로젝트명
 <pre>
 kr
  ┣ or
@@ -44,14 +38,14 @@ kr
 
 ---
 
-#### Modeling
+### Modeling
 
-고객(개념, 관념)
+**고객(개념, 관념)**
 - 홍길동
 - 김민수
 - 손흥민
 
-실체
+**실체**
 - 상태값
   - 이름
   - 나이
@@ -61,9 +55,12 @@ kr
   - 입금한다
   - 출금한다
 
-고객이라는 개념을 class로 표현
+고객이라는 개념을 class로 표현한 것.
+
+----
 
 ### Class
+
 ```java
 1. constructor 생성자
 2. Field 상태
@@ -77,7 +74,10 @@ kr
 2. ADT(Abstract Data Type)
 3. Instance 생성 역할
 
+---
+
 ### Instance
+
 - 개념과 관념 등 실제로 존재하는 거 객체(Object)
 - 이를 class에서 모델링 해 주는 것 인스턴스(Instance)
 - 데이터를 저장하는 memory 공간 + 코드를 실행 가능
@@ -86,13 +86,12 @@ kr
 
 ### Data Type
 
-Data는 메모리 공간에 저장
-OS로부터 불러온 JVM이 관리하는 Memory
+> 메모리 공간의 크기를 잡고 값의 종류를 제한해주는 것이 Data Type이다.
 
-메모리 공간의 크기를 잡고 값의 종류를 제한해주는 것이 Data Type이다.
-
-Java는 Strong Type Language(강 타입 언어)
-데이터 타입을 반드시 명시해줘야 한다
+- Data는 메모리 공간에 저장
+- OS로부터 불러온 JVM이 관리하는 Memory
+- Java는 Strong Type Language(강 타입 언어)
+- 데이터 타입을 반드시 명시해줘야 한다.
 
 ---
 
