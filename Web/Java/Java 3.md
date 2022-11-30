@@ -75,3 +75,31 @@ field는 information hiding을 위해 일반적인 경우 private으로 함
     - field 값을 적절하게 변경
 
 데이터 + 기능: <code>encaptulation(캡슐화)</code>
+
+constructor에 private 생성자 사용이 됨
+일반적으로 private을 사용하면 다른 class에 의해 객체 생성이 안 되는데,
+class로부터 instance를 딱 한 개만 만들 때
+singleton 패턴일 때만 사용함
+
+
+
+
+main은 항상 static으로 잡혀 있어야 한다.
+main이 가장 먼저 호출되기 위해 static과,
+다른 package에서 main을 사용하기 위해 public을 같이 사용하는 것
+
+
+#### System.out.println("Hello world");
+class or instance
+class가 나오면 뒤에 static
+instance 다음은 field 혹은 method
+
+class가 나왔다는 건 instance를 안 만들고 바로 사용하기 위해 static이 나오는 것
+
+### static block
+```java
+static {
+  // 프로그램에서 사용되는 라이브러리를 미리 로딩하고자 하는 경우에 사용
+}
+```
+main method 이전에 실행됨
