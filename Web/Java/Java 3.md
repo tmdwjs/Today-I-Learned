@@ -48,3 +48,4 @@ method의 이름이 같아도 method의 인자 개수나 parameter 타입이 다
 #### private 
 information hiding
 클래스 내부로 숨김(클래스 외부에서 access 할 수 없도록)
+
