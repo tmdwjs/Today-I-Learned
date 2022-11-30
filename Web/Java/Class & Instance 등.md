@@ -70,6 +70,8 @@ kr
 2. ADT(Abstract Data Type)
 3. Instance 생성 역할
 
+![image](https://user-images.githubusercontent.com/85447054/204759245-b69fb972-31e4-433b-b2dd-dcfd82307644.png)
+
 ---
 
 ### Instance
@@ -78,9 +80,11 @@ kr
 - 이를 class에서 모델링 해 주는 것 인스턴스(Instance)
 - 데이터를 저장하는 memory 공간 + 코드를 실행 가능
 
-instance는 메모리 공간입니다.
+**instance는 메모리 공간**입니다. ???라는 메모리 주소를 따라가 보면 인스턴스가 존재하기 때문에 ???라는 인스턴스는 메모리 주소값을 가지고 있다 볼 수 있습니다.이름부터 메모리 주소를 **'참조'하기 때문에 reference data type**이라고 하는 것입니다.
 
-???라는 메모리 주소를 따라가 보면 인스턴스가 존재하기 때문에 ???라는 인스턴스는 메모리 주소값을 가지고 있다 볼 수 있습니다. 이름부터 메모리 주소를 '참조'하기 때문에 reference data type이라고 하는 것입니다. 하지만 java에서 보안 상 실제 메모리 주소를 알아낼 수 없습니다. 즉, 인스턴스가 참조하는 메모리 주소는 메모리 주소의 <code>해쉬값</code>을 참조하는 것입니다.
+하지만 java에서 보안 상 실제 메모리 주소를 알아낼 수 없습니다. 즉, 인스턴스가 참조하는 메모리 주소는 메모리 주소의 <code>해쉬값</code>을 참조하는 것입니다.
+
+![image](https://user-images.githubusercontent.com/85447054/204758108-43605a7b-553b-4496-85d5-5b97d1b6da96.png)
 
 ---
 
