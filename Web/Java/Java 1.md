@@ -32,6 +32,8 @@ compiler를 통한 compile
 > java source 코드 > xxx.java = 사람이 인식<br>
 > byte code의 확장자 > xxx.class = 바이트 코드, 아무도 인식 불가 
 
+![image](https://user-images.githubusercontent.com/85447054/204756634-431b8947-0d48-49d4-870e-acacf5d56983.png)
+
 ---
 
 ### JVM(Java Virtual Machine)
@@ -56,9 +58,11 @@ bytecode를 읽어서 실행하는 방식 → <code>interpreter</code>
 - 메모리 사용 및 실행 속도가 느릴 수 있다.
   - 단, 현재는 기술의 발달로 단점으로 언급되지 않음.
 
-**note**
-- Write once, Run anywhere
+**특징**
+- Write once, Run anywhere(WORA)
 - JVM은 OS에 종속된다.
+
+![image](https://user-images.githubusercontent.com/85447054/204756942-0b8f7d9b-58ed-4231-89cf-76ee3e02d9eb.png)
 
 ---
 
@@ -76,8 +80,6 @@ bytecode를 읽어서 실행하는 방식 → <code>interpreter</code>
 
 
 > 프로그램을 기능으로 분류해서 구현<br> <code>C</code>
-
-<img src='https://user-images.githubusercontent.com/85447054/204209051-b06b678f-28ef-479b-8bc3-b81d375f1640.png' width='600' />
 
 **장점** 
 - 분석, 설계가 쉽다.
