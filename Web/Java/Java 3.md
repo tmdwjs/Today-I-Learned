@@ -36,18 +36,15 @@ method의 이름이 같아도 method의 인자 개수나 parameter 타입이 다
 
 
 ### Access Modifier
-- Public
-- Protected
-- Package
-keyword가 없음
-- Private
+- public
+- protected
+- package
+- private
 
-public과 package는 class 앞에 나옴
-안 나오면 package로 쓰인 것
+1. public과 package는 class 앞에 나오고, 안 나오면 package로 쓰인 것.
+2. constructor, field, method 앞에 붙지만, <code>private</code>, <code>protected</code>는 class 앞에 못 붙음
+3. class가 public이어도, 안에 constructor, field, method가 public인 건 아님
 
-private protected
-class 앞에 못 붙음
-
-넷 전부
-constructor, field, method 앞에 붙지만,
-private, protected는 class 앞에 못 붙음
+#### private 
+information hiding
+클래스 내부로 숨김(클래스 외부에서 access 할 수 없도록)
