@@ -49,3 +49,29 @@ method의 이름이 같아도 method의 인자 개수나 parameter 타입이 다
 information hiding
 클래스 내부로 숨김(클래스 외부에서 access 할 수 없도록)
 
+field는 information hiding을 위해 일반적인 경우 private으로 함
+
+---
+
+### class
+
+#### constructor
+- constructor overloading을 통해 일반적으로 여러 개 사용
+
+#### field
+- static field(class variable)
+  - 모든 instance가 하나의 field를 공유한다.
+- static 아닌 field
+  - instance 각자가 field를 생성
+  - private으로 access modifier를 설정한다.
+    - information hiding 때문에
+    - 외부 class에서 field에 대한 직접적인 접근을 막기 위해
+
+#### method
+- private field 사용이 가능하기 위해 public으로 설정
+  - getter, setter
+  - business method
+    - 우리 field 값을 이용해 로직 처리
+    - field 값을 적절하게 변경
+
+데이터 + 기능: <code>encaptulation(캡슐화)</code>
