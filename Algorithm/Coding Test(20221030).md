@@ -1,4 +1,4 @@
-## Today I Learned
+## 2022 10 30 Today I Learned
 
 <code>코딩 테스트</code>
 

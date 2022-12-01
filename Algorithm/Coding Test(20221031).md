@@ -1,8 +1,4 @@
-## Today I Learned
-
-<code>코딩 테스트</code>
-
----
+## 2022 10 31 Today I Learned
 
 ### 백준
 

@@ -1,8 +1,4 @@
-## Today I Learned
-
-<code>코딩 테스트</code>
-
----
+## 2022 10 25 Today I Learned
 
 ### 프로그래머스
 
