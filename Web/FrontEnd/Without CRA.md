@@ -1,8 +1,4 @@
-## Today I Learned
-
-<code>React(Without CRA)</code>
-
----
+## 2022 10 20 Today I Learned
 
 ### React 앱 구성 요소
 

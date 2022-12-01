@@ -1,8 +1,4 @@
-## Today I Learned
-
-<code>Redux</code> <code>TypeScript</code>
-
----
+## 2022 10 22 Today I Learned
 
 ### Counter App
 
