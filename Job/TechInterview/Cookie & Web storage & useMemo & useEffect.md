@@ -1,8 +1,4 @@
-## Today I Learned
-
-<code>쿠키 </code> <code>세션</code> <code>웹 스토리지</code> <code>useMemo</code> <code>useEffect</code>
-
----
+## 2022 10 27 Today I Learned
 
 ### 쿠키 vs 세션 vs 웹 스토리지
 

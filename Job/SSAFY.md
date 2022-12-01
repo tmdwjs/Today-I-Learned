@@ -1,8 +1,4 @@
-## Weekly I Learned
-
-<code>SSAFY</code>
-
----
+## 2022 11 01 ~ 2022 11 11 Today I Learned
 
 ### 2022 11 01 화
 

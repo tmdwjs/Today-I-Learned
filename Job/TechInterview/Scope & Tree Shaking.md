@@ -1,8 +1,4 @@
-## Today I Learned
-
-<code>스코프</code> <code>트리쉐이킹</code>
-
----
+## 2022 10 22 Today I Learned
 
 ### 스코프(Scope)
 
