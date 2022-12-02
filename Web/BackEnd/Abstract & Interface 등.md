@@ -31,3 +31,45 @@ define 시, abstract method가 abstract class로 전달되는데, 이때 <code>o
 
 ### Interface
 
+class 간의 결합도를 낮출 수 있다.
+
+```java
+public class A {
+  // constructor
+  
+  // field
+  private int k = 100;
+  
+  // method
+    // getter & setter
+    
+    // business method
+      // 일반
+      // abstract
+}
+```
+
+```java
+ // constructor X
+ 
+ // field
+ public static final int k = 100;
+ // public static final 무조건 붙으며, 생략 가능
+ 
+ // method
+  // getter & setter X
+  
+  // business methos
+  public abstract print();
+  // abstract method만 존재
+  // public abstract 생략 가능
+```
+
+1. Class 간에 상속이 가능하며, Interface 간에도 상속이 가능하다.
+2. Class가 Interface를 상속할 수 있나? -> 상속은 불가능함
+3. 단, class는 interface를 구현(implement)할 수 있다.
+```java
+  interface A { }
+  class B interface A { }
+```
+    
