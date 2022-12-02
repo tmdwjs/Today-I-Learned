@@ -34,3 +34,5 @@ public void eat(); // abstract method
 ```
 
 abstract method로 인한 abstract class는 제약이 존재합니다. class가 완성이 안 되어 있기 때문입니다. 따라서 instance를 생성할 수 없습니다.
+
+define 시, abstract method가 abstract class로 전달되는데, 이때 <code>overriding</code> 하면 일반 class가 된다.
