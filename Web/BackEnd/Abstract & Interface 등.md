@@ -12,27 +12,22 @@
 - method 앞에 붙을 수 있다
   - 하위 class
 
-### Abstract class
+---
+
+### Abstract
+
+#### Abstract class
 - class 안에 특별한 case
 - class 안에 abstract method가 단 1개라도 있다면 이 class를 abstract class라고 부른다.
 
 #### Abstract method
 - method 안에 method 하는 일을 명시하지 않은 것
 
-#### method 정의
-```java
-public void eat(){
-
-}
-
-// 일반 method 
-```
-
-#### method를 선언
-```java
-public void eat(); // abstract method
-```
-
 abstract method로 인한 abstract class는 제약이 존재합니다. class가 완성이 안 되어 있기 때문입니다. 따라서 instance를 생성할 수 없습니다.
 
 define 시, abstract method가 abstract class로 전달되는데, 이때 <code>overriding</code> 하면 일반 class가 된다.
+
+---
+
+### Interface
+
