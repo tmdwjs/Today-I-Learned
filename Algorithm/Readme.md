@@ -1,1 +1,1 @@
- ## [코딩테스트 Repository](https://github.com/BaikSeungJeon/Algorithm)
+[코딩테스트 Repository](https://github.com/BaikSeungJeon/Algorithm)
