@@ -12,7 +12,7 @@ Java의 최상위 class는 <code>java.lang.Object</code>. Java에서 나오는 �
 ---
 
 ### Polymorphism(다형성)
-객체는 Data Type에 따라서 여러 형태로 사용될 수 있습니다(IS-A 관계에 의해)
+객체는 Data Type에 따라서 여러 형태로 사용될 수 있습니다.(IS-A 관계에 의해)
 
 ### super()
 
@@ -22,15 +22,6 @@ constructor 안에서 가장 먼저 나오는 코드이며, <code>super()</code>
 
 ### this()
 > 현재 class의 또 다른 생성자를 호출할 때 사용.
-
-### this와 super
-this() 메서드와 super() 메서드가 아닌, 키워드로 비교 시,
-
-#### this
-> 현재 사용하는 instance를 지칭하는 reference variable
-
-#### super
-> this가 가리키는 객체의, 상위 type 객체를 지칭
 
 ---
 
@@ -43,8 +34,8 @@ this() 메서드와 super() 메서드가 아닌, 키워드로 비교 시,
   - instance를 생성하기 위한 공간
 
 ### method overriding
-> 상속 받은 상위 class method를 하위 class에서 재정의 합니다.(덮어쓰기?)<br>
-> dynamic biding(동적 바인딩)이라고도 합니다.
+
+상속 받은 상위 class method를 하위 class에서 재정의 합니다. dynamic biding(동적 바인딩)이라고도 합니다.
 
 ---
 

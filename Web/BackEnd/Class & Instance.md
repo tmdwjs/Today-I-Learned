@@ -9,7 +9,7 @@
 ### Package
 
 - class를 논리적으로 묶는 개념
-- class 사용 시, package를 명시해야 합니다.
+- class 사용 시, package를 명시해야 한다.
 
 #### default package
 
@@ -19,7 +19,7 @@
 
 #### package 네이밍 구조
 
-- damain의 역순으로 구성해 계층 구조를 이룬다.
+- damain의 역순으로 구성해 계층 구조를 이룬다.<br>
   - e.g. www.abc.or.kr → kr.or.abc.프로젝트이름
 
 - pacakge를 물리적으로 묶을 땐 folder로 구분이 된다.<br>
@@ -51,7 +51,7 @@ kr
   - 입금한다
   - 출금한다
 
-고객이라는 개념을 class로 표현한 것.
+> 고객이라는 개념을 class로 표현한 것.
 
 ----
 
@@ -136,21 +136,19 @@ class로부터 **instance를 파생하기 위해** <code>new 키워드</code>를
 
 ### dot operator(점 연산자)
 
-field는 instance마다 각각 공간이 따로 생상된다. instance variable
+field는 instance마다 각각 공간이 따로 생상됩니다.
 
 ---
 
 ### this
 
-객체 지향에서의 this는 현재 사용하는 객체의 reference를 의미합니다.
+객체 지향에서의 this는 **현재 사용하는 객체의 reference**를 의미합니다.
 
 #### 객체 지향의 information hiding
 
-필드에서 public 사용 시, 아무 패키지에서 데이터 접근이 가능하기 때문에 특별한 경우가 아니고서야 public을 지양해야 합니다.
+필드에서 public 사용 시, 아무 패키지에서 데이터 접근이 가능하기 때문에, 특별한 경우가 아니고서야 public을 지양해야 합니다.
 
 ---
-
-### 구현
 
 ```java
 // Customer.java
