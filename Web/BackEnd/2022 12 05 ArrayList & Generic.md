@@ -67,3 +67,14 @@ int a[] = new int[4];
 
 ### Wrapper Class
 > Java가 제공해주는, Primitive type와 매핑하는 class
+
+primitive type <-> wrapper class
+int <-> Integer
+double <-> Double
+...
+
+### Generic
+> 고정된 data type을 표현해주는 것
+
+ArrayList 사용 시, 대부분 같은 DataType를 사용하는 것을 발견할 수 있습니다. 원래는 다른 data type들이 ArrayList 안에 나오는데, 이를 고정시키고자 했고,
+이때 사용하는 게 <code>Generic</code>입니다.
