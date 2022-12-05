@@ -1,5 +1,3 @@
-## 2022 12 02 Today I Learned
-
 ### fianl keyword
 - class 앞에 붙을 수 있다.
   - 이 class는 상슥 계층 구조도에서 제일 마지막에 위치한다.
