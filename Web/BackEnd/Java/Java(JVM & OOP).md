@@ -81,12 +81,12 @@ bytecode를 읽어서 실행하는 방식 → <code>interpreter</code>
 
 > 프로그램을 기능으로 분류해서 구현<br> <code>C</code>
 
-#### 장점 
+#### 장점
 - 분석, 설계가 쉽다.
 - 구현이 용이하다.
 - 비용 절감이 가능하다.
 
-**단점**
+#### 단점
 - 유지보수가 어렵다.
 
 ### 객체지향 프로그래밍
@@ -94,7 +94,7 @@ bytecode를 읽어서 실행하는 방식 → <code>interpreter</code>
 > 현실에서 해결해야 할 문제를 그대로 프로그램으로 표현하자 = 모델링(modeling)<br>
 > <code>Java</code> <code>C++</code> <code>C#</code> <code>Python</code> <code>JavaScript</code>
 
-#### 장점 
+#### 장점
 - 유지보수가 쉽다.
 
 #### 단점
