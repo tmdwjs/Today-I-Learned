@@ -32,6 +32,8 @@ Java의 최상위 Class
 String의 또 다른 특징
 immutable(불변의) <-> mutable(가변의)
 
+---
+
 ### Array
 > 집합 자료 구조
 
@@ -54,6 +56,8 @@ int a[] = new int[4];
 1. 같은 data type만 가능
 2. 크기가 고정돼 있어 사용이 힘듦
 
+---
+
 ### ArrayList
 > 자바가 제공해주는 class <code>java.util</code>에 존재
 
@@ -72,6 +76,8 @@ primitive type <-> wrapper class
 int <-> Integer
 double <-> Double
 ...
+
+---
 
 ### Generic
 > 고정된 data type을 표현해주는 것
