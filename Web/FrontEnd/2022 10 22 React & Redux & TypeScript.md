@@ -1,8 +1,4 @@
-## 2022 10 22 Today I Learned
-
 ### Counter App
-
-with <code>React</code> <code>Redux</code> <code>TypeScript</code>
 
 #### 데모 영상
 

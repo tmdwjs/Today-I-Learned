@@ -1,21 +1,15 @@
-## 2022 11 29 Today I Learned
-
 ### Namespace
-
-- 유니크한 이름을 구분해줄 수 있는 식별자
-
----
+> 유니크한 이름을 구분해줄 수 있는 식별자
 
 ### Package
 
-- class를 논리적으로 묶는 개념
-- class 사용 시, package를 명시해야 한다.
+> class를 논리적으로 묶는 개념
+
+class 사용 시, package를 명시해야 합니다.
 
 #### default package
 
-- 명시하지 않으면 default package라는 특수한 package에 포함된다.
-
-자바에서 나오는 모든 class는 반드시 package로 묶어서 구현해야 하나, 명시하지 않으면 결국 default package로 묶이게 되고, default package는 지양하도록 합니다.
+명시하지 않으면 default package라는 특수한 package에 포함됩니다. 자바에서 나오는 모든 class는 반드시 package로 묶어서 구현해야 하나, 명시하지 않으면 결국 default package로 묶이게 되고, default package는 지양하도록 합니다.
 
 #### package 네이밍 구조
 

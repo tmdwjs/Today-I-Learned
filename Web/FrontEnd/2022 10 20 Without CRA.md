@@ -1,5 +1,3 @@
-## 2022 10 20 Today I Learned
-
 ### React 앱 구성 요소
 
 - React, React Dom
@@ -26,9 +24,9 @@ npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/preset-re
 
 <code>@babel/cli</code> cli를 이용해 직접 babel을 가동해 트랜스파일을 하기 위해서 필요한 패키지
 
-<code>@babel/preset-env</code> 가장 기본이 되는 패키지.
+<code>@babel/preset-env</code> 가장 기본이 되는 패키지
 
-<code>@babel/preset-react</code> React 사용을 위해 필요한 패키지.
+<code>@babel/preset-react</code> React 사용을 위해 필요한 패키지
 
 <code>@babel/preset-typescript</code> TypeScript > JavaScript로 변환하기 위해 필요한 패키지
 
@@ -47,7 +45,7 @@ npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/preset-re
 }
 ```
 
-> 🙋‍♂️ 왜 <code>@babel/preset-react</code>만 배열 형태인가요?
+> @babel/preset-react만 배열 형태인 이유
 
 리액트 17에서 추가된 기능으로, <code>automatic</code>로 설정 시, JSX에서 리액트를 실제 import 해 오지 않더라도 자동으로 해석해 주기 때문입니다.
 
@@ -299,7 +297,7 @@ npm install --save-dev prettier eslint-plugin-prettier eslint-config-prettier
 
 <code>trailingComma</code> es5에서 array와 object의 trailing comma를 허용하여 이렇게 설정했습니다.
 
-> trailing comma는 리스트형 데이터를 선언할 때 맨 뒤에 붙는 comma를 의미합니다. 실수 방지 및 코드 관리의 용이함을 가지고 있습니다.
+trailing comma는 리스트형 데이터를 선언할 때 맨 뒤에 붙는 comma를 의미합니다. 실수 방지 및 코드 관리의 용이함을 가지고 있습니다.
 
 ---
 
