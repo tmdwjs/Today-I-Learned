@@ -128,3 +128,16 @@ public class ArrayListTest {
 ```
 ---
 
+### instanceof
+> 특정 class가 맞는지 확인하는 것
+
+```java
+for(SuperClass el: arr){
+
+    // 이처럼 배열이나 조건문에서 특정 class를 찾아낼 때 사용할 수 있다.
+    if(el instanceof SubClass){
+        // ~~
+    }
+}
+```
+
