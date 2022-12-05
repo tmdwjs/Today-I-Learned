@@ -8,12 +8,12 @@ Java의 최상위 Class
 
 #### 기억해야 하는 method
 1. equals()
-객체를 비교하는 용도로 사용
+> 객체를 비교하는 용도로 사용
 
 문자열 비교할 땐 '=='이 아닌, overriding 된 <code>equals</code>를 사용해야 더 정확한 값을 얻을 수 있습니다.
 
 2. toString()
-객체를 문자열로 표현할 때 사용
+> 객체를 문자열로 표현할 때 사용
 
 #### String class
 - 정수
@@ -77,6 +77,22 @@ int <-> Integer
 double <-> Double
 ...
 
+```java
+public class ArrayListTest {
+    public static void main(String[] args) {
+        ArrayList a = new ArrayList();
+
+        a.add("hello");
+        a.add(new Student("홍길동", 20));
+        a.add(100); // 원래 wrapper class인 Integer를 사용해야 하지만,
+                    // 사용하지 않아도 auto Boxing이 발생한다.
+        a.add(3.14); // auto Boxing이 발생하고, Double class를 사용한다.
+
+        System.out.println(a);
+    }
+}
+```
+
 ---
 
 ### Generic
@@ -84,3 +100,31 @@ double <-> Double
 
 ArrayList 사용 시, 대부분 같은 DataType를 사용하는 것을 발견할 수 있습니다. 원래는 다른 data type들이 ArrayList 안에 나오는데, 이를 고정시키고자 했고,
 이때 사용하는 게 <code>Generic</code>입니다.
+
+```java
+public class ArrayListTest {
+    public static void main(String[] args) {
+        ArrayList<Object> a = new ArrayList<Object>();
+
+        a.add("hello");
+        a.add(new Student("홍길동", 20));
+        a.add(100);     // 원래 wrapper class인 Integer를 사용해야 하지만,
+                        // 사용하지 않아도 auto Boxing이 발생한다.
+        a.add(3.14);    // auto Boxing이 발생하고, Double class를 사용한다.
+
+        System.out.println(a);
+        
+        // 이처럼 String부터 Integret, Double 등 다양한 타입으로 이루어질 경우는 거의 없지만,
+        // 이런 경우 Generic을 <Object>로 지정해주면 된다.
+        
+        ArrayList<String> b = new ArrayList<String>();
+        b.add("hello");
+        b.add("world");
+        b.add(100); // X
+    }
+}
+
+
+```
+---
+
