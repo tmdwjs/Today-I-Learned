@@ -32,6 +32,26 @@ Java의 최상위 Class
 String의 또 다른 특징
 immutable(불변의) <-> mutable(가변의)
 
+#### this.getClass().getSimpleName()
+
+클래스의 메타 정보를 가져올 수 수 있는 메서드입니다. 뒤에 <code>getSimpleName()</code>는 패키지 경로가 포함되어 있지 않는 클래스 이름만 추출하기 때문에, 클래스명만 따기 위해 사용해 줬습니다.
+
+```java
+// Temp.java
+
+public class Temp{
+...
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName() + "  ";
+        // Temp
+    }
+    
+...
+}
+```
+
 ---
 
 ### Array
@@ -140,4 +160,3 @@ for(SuperClass el: arr){
     }
 }
 ```
-
