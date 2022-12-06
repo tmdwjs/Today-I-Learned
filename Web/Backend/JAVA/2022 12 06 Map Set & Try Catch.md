@@ -87,3 +87,27 @@ try {
   // exception이 있거나 없거나 무조건 실행
 }
 ```
+
+#### throw
+> 의도적으로 exception을 발생시키기 위해 사용
+
+```java
+class MyClass extends Exception{
+	// Exception 객체 생성
+}
+
+public class CustomException {
+  public static void main(String[] args) {
+    try{
+    
+      // throw
+      throw new MyClass();
+      
+      // 가장 최상위 Exception의 최상위 class.
+      // 최상위 class인 만큼 모든 예외 처리가 가능하다.
+    }catch(Exception e) {
+
+    }
+  }
+}
+```
