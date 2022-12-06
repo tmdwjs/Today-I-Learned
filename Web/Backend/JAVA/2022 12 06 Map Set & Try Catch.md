@@ -71,3 +71,19 @@ compile time(source code를 작성하는 시점)에는 문제가 없는데, runt
 
 #### Exception Handling
 
+### Try Catch
+```java
+try {
+  // code
+  
+// catch 구문 여러 개 가능
+}catch(처리 할 exception) {
+  // code
+}catch(처리 할 exception) {
+
+}catch(처리 할 exception) {
+
+}finally(){
+  // exception이 있거나 없거나 무조건 실행
+}
+```
