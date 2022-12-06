@@ -113,3 +113,20 @@ public class CustomException {
 ```
 
 로직 코드는 대부분 method 안에서 나오기 때문에, method 안에서 try catch 구분을 작성해야 합니다. 이때 try catch 구문이 너무 많이 작성되는 경우가 있는데, 이때 method는 자기를 호출한 곳으로 exception을 throw 할 수 있습니다. 
+
+```java
+public class CustomException {
+
+  // Exception으로 throws
+  public static void main(String[] args) throws Exception{
+
+    System.out.println("시작");
+    throw new MyClass(); // exception 발생
+    
+    // exception 발생 이후, throws만 했지 아직 로직으로 해결한 게 아니라
+    // unreachable code라는 error 발생
+    System.out.println("종료");
+    
+  }
+}
+```
