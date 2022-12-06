@@ -111,3 +111,5 @@ public class CustomException {
   }
 }
 ```
+
+로직 코드는 대부분 method 안에서 나오기 때문에, method 안에서 try catch 구분을 작성해야 합니다. 이때 try catch 구문이 너무 많이 작성되는 경우가 있는데, 이때 method는 자기를 호출한 곳으로 exception을 throw 할 수 있습니다. 
