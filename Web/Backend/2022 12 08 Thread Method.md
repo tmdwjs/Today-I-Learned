@@ -40,10 +40,23 @@ start() method를 제외한 나머지 method들은 현재 deprecated 됐습니�
 
 일시 중지나 재개, 종료를 위해 제공되는 method는 다음과 같습니다.
 
-- interrupt()
-- interrupted()
-- isInterrupted()
+#### interrupt()
+#### interrupted()
+#### isInterrupted()
 
----
 
-### volatile
+#### volatile
+
+#### yield
+
+#### 상태 전이도
+
+otherwise blocked에서 runnable 가는 경우 두 가지
+1. sleep timeout
+2. interrupt exception
+
+yield: running(수행 중인 상태에서) runnable로 빠짐
+
+#### join
+
+#### 상수 필드
