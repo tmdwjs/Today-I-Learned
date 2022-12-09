@@ -1,5 +1,3 @@
-### join
-
 ### Synchronization(Thread 동기화)
 
 > 하나의 Thread가 특정 작업을 마치기 전까지 다른 Thread에 의해 방해 받지 않도록 처리하는 것
@@ -86,7 +84,7 @@ JAVA IO > 확장된 거 > NIO
 자바 입출력 관련된 내용
 Java.io package
 
-Java Program < - 통로 - > 모니터 (표준 출력)
+Java Program < - Stream - > 모니터 (표준 출력)
 
 Java에서 File에 데이터를 저장
 
@@ -103,4 +101,68 @@ InputStream(class) OutputStream(class)
 InputStream은 read(), byte[] 상태로 읽어드려요
 OutputStream write() byte[] 상태로 출력
 
-4. Stream은 byte
+4. Stream은 byte 단위에 Stream과
+
+기본 Stream은 사용하기 어렵다
+특히 문자열 기반의 입출력을 많이 하는데 기본 Stream으로는 너무 힘들어
+
+Input Stream > Input Stream Reader > Buffered Reader 
+이를 Stream 결합이라고 함
+
+결국 Stream이 데이터 연결 통로
+입력 
+- BufferedReader 이용
+출력
+- 모니터: System.out 제공된 Stream을 이용
+- 일반 용도: PrintWriter
+
+위에까진 문자열 기반 저 두 개만 생각하면 됨
+
+그럼 객체를 받아오고 내보내려면? 
+
+HashMap을 File에 저장
+
+
+Serializable interface를 구현하고 있어야 함
+
+Marshaling
+전달될 때 데이터가 변환될 때를 마샬링이라 말함
+
+
+---
+
+### Network
+
+#### Internet
+
+LAN (Local Area Network)
+
+물리적인 망 위에서 돌아가는 프로그램 = service라고 함
+
+대표적인 인터넷 서비스 = email, web service, torrent, ftp
+
+
+internet 에 연결되어 있는 각 computer가 데이터 통신을 하려면 "주소"가 필요
+이 주소가 <code>ip address</code>
+NIC(Network Interface Card)에 할당
+
+
+#### 3. ip 주소는 논리적인 주소, 이는 임의로 변경이 가능, 결국 물리적인 주소가 필요
+물리적인 주소 > MAC Address 
+IPv4 주소는 논리적인 주소
+
+#### DNS(Domain Name System)
+IP주소는 숫자라 사람이 기억하기 힘들어서 문자로 표현함 이게 Domain
+
+Domain Name > IP 주소 > MAC 주소 순서로 
+
+#### Protocol
+> 국가 간의 약속
+>> CS에서 Protocl의 의미는 데이터 통신을 위해 정해놓은 약속과 규칙을 의미
+
+Web Service > Protocol을 통해서(HTTP) 데이터를 전달
+
+결국 너무 복잡하고 너무 어려워
+버클리에서 쉽게 쓰기 위해 나온 게 Socket
+
+자바 프로그래밍에서 socket 연결하면 사용 가능
