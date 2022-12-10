@@ -32,7 +32,7 @@ public class Class{
 
 > 하나의 Thread가 특정 작업을 마치기 전까지 다른 Thread에 의해 방해 받지 않도록 처리하는 것
 
-#### Lock(락, 잠금) = monitor라고도 함
+#### Lock(monitor)
 
 좌석 정보라는 공유 객체가 있다고 가정합니다. 그리고 옆에 Thread A와 Thread B가 같이 있습니다. 공유 객체는 <code>monitor</code>라는 걸 내부적으로 가지고 있는데, thread에 의해 사용 될 때 가장 먼저 접근한 thread에 대해 공유 객체가 monitor를 주게 됩니다(당연히 thread는 monitor(혹은 lock)를 할당 받게 됩니다.).
 
