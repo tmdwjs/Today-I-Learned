@@ -107,65 +107,65 @@ class Thread08_1 implements Runnable{
   // 이후 상황에 맞게 true와 false를 할당해 중단과 재개, 멈춤 기능을 하는 로직을 작성할 예정
   // 하지만 volatile keyword를 붙이지 않으면 cache에 저장된 값을 사용하기 때문에 실제로는 실행이 안됨
   // 이럴 때 사용하는 keyword가 volatile
-	volatile boolean suspended = false;
-	volatile boolean stopped = false;
+  volatile boolean suspended = false;
+  volatile boolean stopped = false;
 	
-	@Override
-	public void run() {
-		while(!stopped) {
-			if(!suspended) {
-				System.out.println(Thread.currentThread().getName());
+  @Override
+    public void run() {
+	while(!stopped) {
+	  if(!suspended) {
+	    System.out.println(Thread.currentThread().getName());
 				
-				try {
-					Thread.sleep(1000);
-				} catch (Exception e) {
+	    try {
+	      Thread.sleep(1000);
+	  } catch (Exception e) {
 					
-				}
-			}
-		}
-	}
+	  }
+      }
+  }
+}
 	
-	// 기존 suspend(), resume(), stop() method가 deprecated 상태라 권장 x
-	// 같은 역할을 하는 method를 만들어 준 것
-	// return 값이 없으니 void type 지정
-	public void suspend() {suspended = true;}
-	public void resume() {suspended = false;}
-	public void stop() {stopped = true;}
+  // 기존 suspend(), resume(), stop() method가 deprecated 상태라 권장 x
+  // 같은 역할을 하는 method를 만들어 준 것
+  // return 값이 없으니 void type 지정
+  public void suspend() {suspended = true;}
+  public void resume() {suspended = false;}
+  public void stop() {stopped = true;}
 }
 
 public class Thread08 {
-	public static void main(String[] args) {
+  public static void main(String[] args) {
   
-		Thread08_1 r1 = new Thread08_1(); 
-		Thread08_1 r2 = new Thread08_1();
-		Thread08_1 r3 = new Thread08_1();
+    Thread08_1 r1 = new Thread08_1(); 
+    Thread08_1 r2 = new Thread08_1();
+    Thread08_1 r3 = new Thread08_1();
 		
-		Thread t1 = new Thread(r1, "*");
-		Thread t2 = new Thread(r2, "**");
-		Thread t3 = new Thread(r3, "***");
+    Thread t1 = new Thread(r1, "*");
+    Thread t2 = new Thread(r2, "**");
+    Thread t3 = new Thread(r3, "***");
 		
-		t1.start();
-		t2.start();
-		t3.start();
+    t1.start();
+    t2.start();
+    t3.start();
 		
-		try {
-			Thread.sleep(2000);
-			r1.suspend(); // r1 일시 중단
+    try {
+	Thread.sleep(2000);
+	r1.suspend(); // r1 일시 중단
 			
-			Thread.sleep(2000);
-			r2.suspend(); // r2 일시 중단
+	Thread.sleep(2000);
+	r2.suspend(); // r2 일시 중단
 			
-			Thread.sleep(2000);
-			r1.resume();	// r1 재개
-			// 하지만 역시나 재개가 안 됨 왜?
-                    	// cache에 저장된 값을 사용했기 때문에
-			// cache 메모리를 사용하지 않으려면 volatile keyword 사용
-			/ 멀티 스레드 시, 바뀐 값을 적용할 수 있게 해 주는 변수
+	Thread.sleep(2000);
+	r1.resume();	// r1 재개
+	// 하지만 역시나 재개가 안 됨 왜?
+	// cache에 저장된 값을 사용했기 때문에
+	// cache 메모리를 사용하지 않으려면 volatile keyword 사용
+	/ 멀티 스레드 시, 바뀐 값을 적용할 수 있게 해 주는 변수
 			
-		} catch (Exception e) {
+    } catch (Exception e) {
 			
-		}	
-	}
+    }	
+  }
 }
 
 ...
@@ -187,68 +187,69 @@ class Thread08_1 implements Runnable{
   // 이후 상황에 맞게 true와 false를 할당해 중단과 재개, 멈춤 기능을 하는 로직을 작성할 예정
   // 하지만 volatile keyword를 붙이지 않으면 cache에 저장된 값을 사용하기 때문에 실제로는 실행이 안됨
   // 이럴 때 사용하는 keyword가 volatile
-	volatile boolean suspended = false;
-	volatile boolean stopped = false;
+  
+  volatile boolean suspended = false;
+  volatile boolean stopped = false;
 	
-	@Override
-	public void run() {
-		while(!stopped) {
-			if(!suspended) {
-				System.out.println(Thread.currentThread().getName());
+    @Override
+    public void run() {
+      while(!stopped) {
+	if(!suspended) {
+	  System.out.println(Thread.currentThread().getName());
 				
-				try {
-					Thread.sleep(1000);
-				} catch (Exception e) {
+	    try {
+		Thread.sleep(1000);
+	    } catch (Exception e) {
 					
-				}
-			}else {
-        Thread.yield();	// if else문에 의해 해당 block은 suspended 상태에 실행된다.
-			// 즉 suspended일 때 다른 thread에게 core 양보를 위해 yield 처리 해 준다.
-      }
-		}
-	}
+	    }
+	  }else {
+            Thread.yield(); // if else문에 의해 해당 block은 suspended 상태에 실행된다.
+			    // 즉 suspended일 때 다른 thread에게 core 양보를 위해 yield 처리 해 준다.
+    }
+  }
+}
 	
-	// 기존 suspend(), resume(), stop() method가 deprecated 상태라 권장 x
-	// 같은 역할을 하는 method를 만들어 준 것
-	// return 값이 없으니 void type 지정
-	public void suspend() {suspended = true;}
-	public void resume() {suspended = false;}
-	public void stop() {stopped = true;}
+  // 기존 suspend(), resume(), stop() method가 deprecated 상태라 권장 x
+  // 같은 역할을 하는 method를 만들어 준 것
+  // return 값이 없으니 void type 지정
+  public void suspend() {suspended = true;}
+  public void resume() {suspended = false;}
+  public void stop() {stopped = true;}
 }
 
 public class Thread08 {
-	public static void main(String[] args) {
+  public static void main(String[] args) {
   
-		Thread08_1 r1 = new Thread08_1(); 
-		Thread08_1 r2 = new Thread08_1();
-		Thread08_1 r3 = new Thread08_1();
+    Thread08_1 r1 = new Thread08_1(); 
+    Thread08_1 r2 = new Thread08_1();
+    Thread08_1 r3 = new Thread08_1();
 		
-		Thread t1 = new Thread(r1, "*");
-		Thread t2 = new Thread(r2, "**");
-		Thread t3 = new Thread(r3, "***");
+    Thread t1 = new Thread(r1, "*");
+    Thread t2 = new Thread(r2, "**");
+    Thread t3 = new Thread(r3, "***");
 		
-		t1.start();
-		t2.start();
-		t3.start();
+    t1.start();
+    t2.start();
+    t3.start();
 		
-		try {
-			Thread.sleep(2000);
-			r1.suspend(); // r1 일시 중단
+    try {
+      Thread.sleep(2000);
+      r1.suspend(); // r1 일시 중단
 			
-			Thread.sleep(2000);
-			r2.suspend(); // r2 일시 중단
+      Thread.sleep(2000);
+      r2.suspend(); // r2 일시 중단
 			
-			Thread.sleep(2000);
-			r1.resume();	// r1 재개
-			// 하지만 역시나 재개가 안 됨 왜?
-                        // cache에 저장된 값을 사용했기 때문에
-			// cache 메모리를 사용하지 않으려면 volatile keyword 사용
-			// 멀티 스레드 시, 바뀐 값을 적용할 수 있게 해 주는 변수
+      Thread.sleep(2000);
+	r1.resume();  // r1 재개
+		      // 하지만 역시나 재개가 안 됨 왜?
+		      // cache에 저장된 값을 사용했기 때문에
+		      // cache 메모리를 사용하지 않으려면 volatile keyword 사용
+		      // 멀티 스레드 시, 바뀐 값을 적용할 수 있게 해 주는 변수
 			
-		} catch (Exception e) {
+	} catch (Exception e) {
 			
-		}	
-	}
+        }	
+    }
 }
 
 ...
