@@ -6,6 +6,28 @@ interrupt() 사용 시, sleep 중인 thread를 깨우러 가면 main method는 �
 
 따라서 이때는 병렬이 아닌 순차 진행이 돼야 하는데, 이럴 때 사용하는 게 <code>join()</code>입니다. 하지만 join()을 제대로 사용하지 않으면 무한 루프에 빠질 수 있게 됩니다. 예상하지 못한 이유로 종료되지 않는다면, join()이 끝나지 않을 수 있어 <code>join(timeout)</code>를 적용하면 join을 빠져나와 다음 작업을 처리할 수 있습니다.
 
+```java
+...
+
+public class Class{
+  public static void main(String[] args){
+    Runnable r = new Temp();
+    Thread t = new Thread(r);
+    
+    ...
+    
+    try{
+      t.join();
+    }catch(){
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+  }
+}
+
+...
+```
+
 ---
 
 ### Synchronization(Thread 동기화)
