@@ -52,40 +52,40 @@ import javax.swing.JOptionPane;
 // Thread Class 상속
 class Thread06_01 extends Thread{
 	
-	@Override
-	public void run() {
-		int i = 10;
-		
-		while(i != 0 && !isInterrupted()) {
-			System.out.println(i--);
-			
-			try {
-				Thread.sleep(2000); // 2초 + a마다 재우고 깨우고를 반
-			} catch (InterruptedException e) {
-				interrupt();	// sleep 상태에서 깨면서 interrupt()를 초기화 한다.
-                      // 동시에 InterruptException이 발생해 catch 구문으로 빠지게 된다.
-                      // 따라서 interrupt를 위해 해당 블록에서 interrupt를 한 번 더 실행해 줘야 함
-			}
-		}
-		
-		System.out.println("finish");
-	}
+  @Override
+  public void run() {
+    int i = 10;
+
+    while(i != 0 && !isInterrupted()) {
+      System.out.println(i--);
+
+	try {
+	  Thread.sleep(2000); // 2초 + a마다 재우고 깨우고를 반
+	} catch (InterruptedException e) {
+	  interrupt();	// sleep 상태에서 깨면서 interrupt()를 초기화 한다.
+          // 동시에 InterruptException이 발생해 catch 구문으로 빠지게 된다.
+          // 따라서 interrupt를 위해 해당 블록에서 interrupt를 한 번 더 실행해 줘야 함
+      }
+    }
+
+    System.out.println("finish");
+  }
 }
 
 // main Class
 public class Thread06 {
-	public static void main(String[] args) {
-		Thread t = new Thread06_01(); // thread 객체 생성 
-		t.start(); // thread start
+  public static void main(String[] args) {
+    Thread t = new Thread06_01(); // thread 객체 생성 
+    t.start(); // thread start
 		
     // 사용자 입력창
-		String data = JOptionPane.showInputDialog("input");
-		System.out.println(data);
+    String data = JOptionPane.showInputDialog("input");
+    System.out.println(data);
 		
-		t.interrupt();	// thread에 interrupt 실행
-                    // 만약 interrupt를 걸었는데 해당 Thread 하필 sleep 상태면,
-                    // sleep 상태에서 일어나기만 할 뿐, 일어나면서 interrupt를 초기화 한다.
-	}
+    t.interrupt(); // thread에 interrupt 실행
+       		  // 만약 interrupt를 걸었는데 해당 Thread 하필 sleep 상태면,
+		  // sleep 상태에서 일어나기만 할 뿐, 일어나면서 interrupt를 초기화 한다.
+  }
 }
 
 ```
@@ -157,10 +157,10 @@ public class Thread08 {
 			
 			Thread.sleep(2000);
 			r1.resume();	// r1 재개
-							      // 하지만 역시나 재개가 안 됨 왜?
-                    // cache에 저장된 값을 사용했기 때문에
-							      // cache 메모리를 사용하지 않으려면 volatile keyword 사용
-							        // 멀티 스레드 시, 바뀐 값을 적용할 수 있게 해 주는 변수
+			// 하지만 역시나 재개가 안 됨 왜?
+                    	// cache에 저장된 값을 사용했기 때문에
+			// cache 메모리를 사용하지 않으려면 volatile keyword 사용
+			/ 멀티 스레드 시, 바뀐 값을 적용할 수 있게 해 주는 변수
 			
 		} catch (Exception e) {
 			
@@ -240,10 +240,10 @@ public class Thread08 {
 			
 			Thread.sleep(2000);
 			r1.resume();	// r1 재개
-							      // 하지만 역시나 재개가 안 됨 왜?
-                    // cache에 저장된 값을 사용했기 때문에
-							      // cache 메모리를 사용하지 않으려면 volatile keyword 사용
-							        // 멀티 스레드 시, 바뀐 값을 적용할 수 있게 해 주는 변수
+			// 하지만 역시나 재개가 안 됨 왜?
+                        // cache에 저장된 값을 사용했기 때문에
+			// cache 메모리를 사용하지 않으려면 volatile keyword 사용
+			// 멀티 스레드 시, 바뀐 값을 적용할 수 있게 해 주는 변수
 			
 		} catch (Exception e) {
 			
