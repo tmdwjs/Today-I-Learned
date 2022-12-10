@@ -203,7 +203,7 @@ class Thread08_1 implements Runnable{
 				}
 			}else {
         Thread.yield();	// if else문에 의해 해당 block은 suspended 상태에 실행된다.
-								        // 즉 suspended일 때 다른 thread에게 core 양보를 위해 yield 처리 해 준다.
+			// 즉 suspended일 때 다른 thread에게 core 양보를 위해 yield 처리 해 준다.
       }
 		}
 	}
