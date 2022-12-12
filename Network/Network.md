@@ -29,3 +29,5 @@ port는 하나의 컴퓨터에서 실행되는 프로그램에 할당할 수 있
 하지만 <code>ip address</code>와 <code>port</code> 번호가 있어야 상대방 Process를 식별하고 데이터를 주고 받을 수 있기 때문에 중복하여 사용하는 걸 지양합니다.
 
 ### Socket
+> 데이터 통신을 위해 port를 추상화 한 것
+
