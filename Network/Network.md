@@ -31,3 +31,11 @@ port는 하나의 컴퓨터에서 실행되는 프로그램에 할당할 수 있
 ### Socket
 > 데이터 통신을 위해 port를 추상화 한 것
 
+#### C/S 구조
+> Client / Server 구조
+
+<code>server</code>는 client가 접속하기를 기다리다가 접속이 들어오면 응답합니다. 
+
+<code>client</code>는 능동적으로 서버에 접속하는 process입니다.
+
+server와 client가 데이터 통신을 하려면 socket이라 불리는 객체가 양 단에 하나씩 있어야 합니다. server는 client 접속을 기다려야 하고, 만약에 접속이 들어오면 연결해야 합니다. client가 Server 내부에 <code>Server socket</code>에 접속하게 되면, 얘가 socket을 생성하게 됩니다.
