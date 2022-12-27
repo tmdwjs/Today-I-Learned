@@ -1,5 +1,3 @@
-## 2022 11 30 Today I Learned
-
 ### JVM 메모리 구조
 
 - Stack
