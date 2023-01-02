@@ -1,2 +1,2 @@
-## Today I Learned
-금일 학습 내용 정리 및 개발 활동의 전반적인 내용을 블로깅 합니다.
+## Github Blog
+Tistory, Velog와 같이, Github에 개발에 대한 전반적인 내용을 포스팅하는 블로그입니다.
