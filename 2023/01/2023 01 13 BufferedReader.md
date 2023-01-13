@@ -21,6 +21,8 @@ public class Main {
 }
 ```
 
+---
+
 ### Scanner와 BufferedReader
 
 #### Scanner
@@ -34,6 +36,8 @@ public class Main {
 그리고 입력 받은 값을 <code>16384 byte</code> 크기의 버퍼에 담아 두었다 한 번에 프로그램에 전송하는데, 어떻게 보면 받는 즉시 전송하는 Scanner가 더 효율적이고 빠르다 생각하겠지만, 과일 수확 시, 과일 하나를 수확할 때마다 옮기는 것과, 바구니에 담아 한 번에 옮기는 것을 생각해 보면 후자가 더 효율적인 것을 느낄 수 있습니다.
 
 BufferedReader에서는 예외 처리가 필수이시 때문에 <code>try catch</code>문 혹은 <code>throws IOException</code> 처리를 해 줘야 하며, 입력을 받기 위해선 <code>readLine()</code> 메서드를 사용해야 합니다.
+
+---
 
 ### Split과 StringTokenizer
 
