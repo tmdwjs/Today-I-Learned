@@ -65,4 +65,4 @@ public class Main {
 
 <code>charAt(int)</code>: <code>String</code>으로 저장된 문자열 중 하나를 <code>char</code>로 변환해 줍니다.
 
-<code>Character.getNumbericValue</code>: 숫자 형태의 <code>char</code> 타입을 <code>int</code>로 변환해 줍니다.
+<code>Character.getNumbericValue(char)</code>: 숫자 형태의 <code>char</code> 타입을 <code>int</code>로 변환해 줍니다.
