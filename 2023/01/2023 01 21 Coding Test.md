@@ -76,9 +76,7 @@ public class Main13 {
 
 #### 노트
 
-해당 문제에서 시간 초과를 벗어나기 위해 두 가지를 했습니다. 하나는 <code>Scanner</code>에서 <code>BufferedReader</code>로 입력을 받은 것이고, 나머지 하나는 반복문이 돌 때마다 출력하는 것이 아닌, <code>StringBuilder</code>을 출력을 한 번에 더해 출력한 것입니다.
-
-<code>StringBuilder</code>: 문자열을 더하여 출력합니다. 문자열을 더할 때 새로운 객체를 생성하지 않고, 기존 데이터에 더하기 때문에 상대적으로 부하도 적고 속도도 빠릅니다.
+해당 문제에서 시간 초과를 벗어나기 위해 두 가지를 했습니다. 하나는 <code>Scanner</code>에서 <code>BufferedReader</code>로 입력을 받은 것이고, 나머지 하나는 반복문이 돌 때마다 출력하는 것이 아닌, <code>StringBuilder</code>을 출력을 한 번에 더해 출력한 것입니다. <code>StringBuilder</code>에 대해선 [다음]()에 작성했습니다.
 
 #### 참조
 https://st-lab.tistory.com/159#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98
