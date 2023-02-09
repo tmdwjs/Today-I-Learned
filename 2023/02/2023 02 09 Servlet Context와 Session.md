@@ -10,7 +10,7 @@
 protected void doPost(HttpServletRequest request, HttpServletResponse response)
   throws ServletException, IOException {
     request.setCharacterEncoding("UTF-8"); // 서버 측에서 받은 한글 인코딩
-		String name = request.getParameter("userName"); // html에서 입력을 받음
+    String name = request.getParameter("userName"); // html에서 입력을 받음
 
     // Servlet Context를 가져와서 여기에 이름을 저장
     ServletContext context = this.getServletContext();
@@ -34,7 +34,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)
     // 다른 servlet에서 context를 이용해 저장된 값을 사용할 것
 
     // context 가져와서
-		ServletContext context = this.getServletContext();
+    ServletContext context = this.getServletContext();
     // 내가 저장한 key 값 'memberName'을 가져온다.
     // 이때 Object 타입으로 나오기 때문에 String으로 cast 해 줘야 함.
     String name = (String) context.getAttribute("memberName"); 
@@ -93,33 +93,33 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
     UserVO result = sqlSession.selectOne("user.isChecked", user);
     sqlSession.close(); // 사용했으면 닫기
 
-		response.setContentType("text/html; charset=UTF-8");
-		PrintWriter out = response.getWriter();
-		out.println("<html><head></head>");
-		out.println("<body>");
+    response.setContentType("text/html; charset=UTF-8");
+    PrintWriter out = response.getWriter();
+    out.println("<html><head></head>");
+    out.println("<body>");
 		
     // result가 존재 = 로그인 성공 시
-		if (result != null) {
-			// 이때 session 객체를 할당 받을 것
-			// servlet container에게 session 객체를 요청
+	  if (result != null) {
+	    // 이때 session 객체를 할당 받을 것
+	    // servlet container에게 session 객체를 요청
 
-			// 여기서 request.getSession(true);의 의미는
+	    // 여기서 request.getSession(true);의 의미는
       // 내게 기존에 할당된 session 객체가 없으면 만들어 주고,
-			// 만약 기존에 내가 할당 받은 session 객체가 있으면 그것을 달라는 의미
-			HttpSession session = request.getSession(true);
+	    // 만약 기존에 내가 할당 받은 session 객체가 있으면 그것을 달라는 의미
+	    HttpSession session = request.getSession(true);
 
-			// 이 session 객체는 map 형태
-			session.setAttribute("loginName", result.getName());
-			// 내가 정한 key 값으로 값을 가져다 박을 것. getName = user vo 이름
-			// 이렇게 해 놓고 로그인이 필요한 페이지로 넘어가면 됨
+	    // 이 session 객체는 map 형태
+	    session.setAttribute("loginName", result.getName());
+	    // 내가 정한 key 값으로 값을 가져다 박을 것. getName = user vo 이름
+	    // 이렇게 해 놓고 로그인이 필요한 페이지로 넘어가면 됨
 		} else {
 
       // 로그인 실패 시
-			out.println("로그인에 실패했습니다.");
-		}
+	    out.println("로그인에 실패했습니다.");
+    }
 		
-		out.println("</body></html>");
-	}
+    out.println("</body></html>");
+  }
 ```
 ```java
 // BoardServlet
