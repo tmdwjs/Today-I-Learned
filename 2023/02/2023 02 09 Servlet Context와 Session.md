@@ -99,23 +99,23 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
     out.println("<body>");
 		
     // result가 존재 = 로그인 성공 시
-	  if (result != null) {
-	    // 이때 session 객체를 할당 받을 것
-	    // servlet container에게 session 객체를 요청
+    if (result != null) {
+      // 이때 session 객체를 할당 받을 것
+      // servlet container에게 session 객체를 요청
 
-	    // 여기서 request.getSession(true);의 의미는
+      // 여기서 request.getSession(true);의 의미는
       // 내게 기존에 할당된 session 객체가 없으면 만들어 주고,
-	    // 만약 기존에 내가 할당 받은 session 객체가 있으면 그것을 달라는 의미
-	    HttpSession session = request.getSession(true);
+      // 만약 기존에 내가 할당 받은 session 객체가 있으면 그것을 달라는 의미
+      HttpSession session = request.getSession(true);
 
-	    // 이 session 객체는 map 형태
-	    session.setAttribute("loginName", result.getName());
-	    // 내가 정한 key 값으로 값을 가져다 박을 것. getName = user vo 이름
-	    // 이렇게 해 놓고 로그인이 필요한 페이지로 넘어가면 됨
-		} else {
+      // 이 session 객체는 map 형태
+      session.setAttribute("loginName", result.getName());
+      // 내가 정한 key 값으로 값을 가져다 박을 것. getName = user vo 이름
+      // 이렇게 해 놓고 로그인이 필요한 페이지로 넘어가면 됨
+    } else {
 
       // 로그인 실패 시
-	    out.println("로그인에 실패했습니다.");
+      out.println("로그인에 실패했습니다.");
     }
 		
     out.println("</body></html>");
