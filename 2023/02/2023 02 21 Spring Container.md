@@ -85,3 +85,19 @@ class MyResourceConfig {
   }
 }
 ```
+
+### Singleton Registry
+> Application Context의 기능 중 하나
+
+그럼 왜 <code>Singleton</code>으로 <code>Bean</code>을 관리하는 걸까요? <code>Spring</code>은 <code>Server Side Application</code>을 구현하기 위해 사용합니다. 여러 클라이언트에 의해 공유되는 객체가 필요합니다. 이를 <code>Singleton</code>으로 처리해야 효율이 좋기 때문입니다.
+
+여러 쓰레드에 의해 공유가 가능한 객체를 Bean으로 등록해 효율을 높이자는 거지, 프로그램의 모든 객체를 다 하자는 게 아님. stateless를 해야지 stateful은 하면 안됨 그렇기 때문에 VO는 Bean으로 사용하지 않음
+
+### 의존 관계(Dependency)
+> 두 개의 Class를 대상으로 하며, 방향성을 표시해야 함
+
+두 개의 클래스 <code>A</code>와 <code>B</code>가 있습니다. 이 둘 사이에 의존성이 있다면, 이를 화살표로 방향성을 표시해야 합니다.
+만약 <code>A</code> - - -> <code>B</code>와 같이 화살표로 방향성을 나타내면 이는 <code>A</code>가 <code>B</code>에 의존한다 할 수 있습니다.
+이런 경우 <code>A</code>의 입장에서는 의존 대산인 <code>B</code>가 변하면 그 영향이 <code>A</code>에 미친다는 것을 의미합니다.
+
+dependency injection은 두 가지가 있음 setter와 contructor(생성자)
