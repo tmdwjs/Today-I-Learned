@@ -89,9 +89,11 @@ class MyResourceConfig {
 ### Singleton Registry
 > Application Context의 기능 중 하나
 
-그럼 왜 <code>Singleton</code>으로 <code>Bean</code>을 관리하는 걸까요? <code>Spring</code>은 <code>Server Side Application</code>을 구현하기 위해 사용합니다. 여러 클라이언트에 의해 공유되는 객체가 필요합니다. 이를 <code>Singleton</code>으로 처리해야 효율이 좋기 때문입니다.
+그럼 왜 <code>Singleton</code>으로 <code>Bean</code>을 관리하는 걸까요? <code>Spring</code>은 다수의 이용자가 동시에 접속하는 서비스를 작성하는 데 활용됩니다. 이때 클라이언트에 의해 공유되는 객체가 필요한데, 이런 경우 여러 클라이언트가 하나의 객체를 공유하도록 설계하는 게 효율적이기 때문입니다.
 
-여러 쓰레드에 의해 공유가 가능한 객체를 Bean으로 등록해 효율을 높이자는 거지, 프로그램의 모든 객체를 다 하자는 게 아님. stateless를 해야지 stateful은 하면 안됨 그렇기 때문에 VO는 Bean으로 사용하지 않음
+가령, 이전 교육 과정의 프로젝트를 비추어 봐도 <code>Service</code>나 <code>Dao</code>를 매번 <code>new</code> 키워드를 통해 생성해 냈는데, 만약 수백 명이 접속한다면 객체를 수백 개 생성할 것입니다. 그렇기 때문에 <code>Service</code>나 <code>Dao</code>를 공유하도록 <code>Singleton</code>으로 처리하는 것이 효율적일 것입니다.
+
+하지만 여러 Thread에 의해 공유가 가능한 객체를 Bean으로 등록해 효율을 높이자는 거지, 프로그램의 모든 객체를 다 하자는 게 아닙니다. <code>Singleton</code>으로 객체를 사용하기 위해선 <code>Stateless</code>여야 하는데, <code>VO</code>는 <code>Stateful</code> 해야 하기 때문에 Bean으로 사용하지 않습니다.
 
 ### 의존 관계(Dependency)
 > 두 개의 Class를 대상으로 하며, 방향성을 표시해야 함
