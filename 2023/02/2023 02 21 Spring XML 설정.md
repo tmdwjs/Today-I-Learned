@@ -13,3 +13,8 @@
 통상 <code>xml</code>의 파일명은 <code>beans.xml</code> 혹은 <code>applicationContext.xml</code>로 지정해 줍니다.
 
 ### XML 설정
+
+#### xml 파일 생성
+앞서 말했듯 xml의 파일명은 통상적으로 <code>beans.xml</code> 혹은 <code>applicationContext.xml</code>로 작성합니다.
+
+#### 
