@@ -204,7 +204,7 @@ public class HomeController {
 
 ### DispatcherServlet
 
-<code>DispatcherServlet</code>를 만들 때 가장 큰 장점은, 이전 게시판 프로젝트에서는 모든 컨트롤러를 서블릿으로 만들었는데, 이제는 컨트롤러를 만들 때 서블릿이 아닌 일반 자바 클래스로 만들어도 된다는 것입니다. 예전엔 전부 서블릿으로 만들어야 했지만, 스프링에 들어오면서 그럴 일이 사라진 것입니다.
+<code>DispatcherServlet</code>를 만들 때 가장 큰 장점은, 이전 게시판 프로젝트에서는 모든 컨트롤러를 서블릿으로 만들었는데, 이제는 컨트롤러를 만들 때 서블릿이 아닌 일반 자바 클래스로 만들어도 된다는 것입니다. 예전엔 전부 서블릿으로 만들어야 했지만, 스프링에 들어오면서 최초로 DispatcherServlet을 먼저 거치기 때문에 컨트롤러를 전부 서블릿으로 생성할 필요가 없기 때문입니다.
 
 ### HomeController.java
 > my.spring.springweb/HomeController.java
@@ -252,9 +252,7 @@ Root Web Application 설정 파일입니다.
 ## Spring Web MVC 및 주요 개념들
 
 ### viewresolver
-<code>servlet-context.xml</code> 안에 <code>viewresolver</code>라는 친구가 있습니다. 얘의 역할을 알기 전 우선 메카니즘을 알아야 합니다.
-
-DispatcherServlet이 핸들러로부터 이 리턴 받는다면 
+<code>servlet-context.xml</code> 안에 <code>viewresolver</code>라는 친구가 있습니다. 얘의 역할을 알기 전 우선 메커니즘을 알아야 합니다. 
 
 클라이언트에 요청이 오면 이 request를 <code>DispatcherServlet</code>이 받습니다. 얘가 우리가 만든 컨트롤러로 넘기는 역할을 하는데요. 이후 핸들러로부터 문자열을 리턴 받는다면 <code>DispatcherServlet</code>이 <code>viewresolver</code>라는 애한테 문자열을 보낸 후 만들어진 경로를 받아 jsp의 위치를 찾습니다.
 
