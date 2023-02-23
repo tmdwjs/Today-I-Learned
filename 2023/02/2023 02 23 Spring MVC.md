@@ -215,111 +215,86 @@ public class HomeController {
 
 Web의 홈입니다.
 
-#### resources
+### resources
 > src/main/webapp/resources
 
 정적 Resource(HTML, CSS, JS, images 등)가 존재합니다.
 
-#### WEB-INF
+### WEB-INF
 > src/main/webapp/WEB-INF
 
-여기에는 클라이언트가 직접적으로 접근할 수 없습니다. 이전 게시판 프로젝트에서 페이지 이동 시 사용했던 방법처럼 jsp 파일에서 jsp로 이동을 직접 하는 게 아닌, 서블릿을 거쳐서 
+여기에는 클라이언트가 직접적으로 접근할 수 없습니다. 이전 게시판 프로젝트에서 페이지 이동 시 사용했던 방법처럼 jsp 파일에서 jsp로 요청하는 게 아닌 jsp -> jsp의 역할을 하는 컨트롤러를 거쳐 이동해야 합니다.
 
-#### servlet-context.xml
+### servlet-context.xml
 > src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml
-Servlet Web ApplicationContext 설정 파일
-Spring IoC Container 설정 파일
 
-#### root-context.xml
+Servlet Web ApplicationContext 설정 파일입니다.
+
+### root-context.xml
 > src/main/webapp/WEB-INF/spring/root-context.xml
-Root Web Application 설정 파일
-Spring IoC Container 설정 파일
 
-#### views
+Root Web Application 설정 파일입니다.
+
+### views
 > src/main/webapp/WEB-INF/views
 
+앞으로 해당 폴더 안에다 <code>jsp</code> 파일을 만들도록 합니다.
 
-jsp는 어디 만들까?
-views 안에 
-home.jsp = views
-
-#### web.xml
+### web.xml
 > src/main/webapp/WEB-INF/web.xml
-DispatcherServlet mapping 설정
 
-제일 앞단 서블릿 설정이 해당 파일에 위치함
+<code>DispatcherServlet</code> 매핑 설정을 하는 파일입니다.
 
-#### pom.xml
-프로젝트 전체 설정
+### pom.xml
 
-servlet-context.xml 안에 viewresolver라는 놈이 있음
-얘는 핸들러로부터 만약 스트링이 리턴된다면, 
+프로젝트 전체 설정 파일입니다.
 
-클라이언트에 리퀘스트가 있으면 디스패처 서블릿이 받는데, 얘가 우리가 만든 @컨트롤러로 넘기는 것 
+## Spring Web MVC 및 주요 개념들
 
-그래서 핸들러로부터 스트링이 리턴되면 dispatcherServlet이 viewresolver라는 애한테 스트링을 보내서 경로를 만들어 리턴시키는 것 그래야 jsp를 찾을 수 있음
+### viewresolver
+<code>servlet-context.xml</code> 안에 <code>viewresolver</code>라는 친구가 있습니다. 얘의 역할을 알기 전 우선 메카니즘을 알아야 합니다.
 
-그래서 view 객체 만들고 클라이언트로 
+DispatcherServlet이 핸들러로부터 이 리턴 받는다면 
+
+클라이언트에 요청이 오면 이 request를 <code>DispatcherServlet</code>이 받습니다. 얘가 우리가 만든 컨트롤러로 넘기는 역할을 하는데요. 이후 핸들러로부터 문자열을 리턴 받는다면 <code>DispatcherServlet</code>이 <code>viewresolver</code>라는 애한테 문자열을 보낸 후 만들어진 경로를 받아 jsp의 위치를 찾습니다.
 
 ```xml
 <!-- servlet-context.xml -->
 
 <beans:bean
   class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-  <beans:property name="prefix" value="/WEB-INF/views/" />
-  <beans:property name="suffix" value=".jsp" />
+  <beans:property name="prefix" value="/WEB-INF/views/" /> <!-- prefix는 앞에 -->
+  <beans:property name="suffix" value=".jsp" /> <!-- suffix는 뒤에 붙음 -->
+	<!-- 즉 "해당 경로" + ".jsp"로 리턴 -->
 </beans:bean>
 ```
 
-모든 리소스는 dispatcherServlet이 받음 
-
-http://localhost:8080/springweb/
-http://localhost:8080/springweb/resources/test.html
-
 ### default-servlet-handler 설정
 
-DispatcherServlet(FrontContainer)로부터 request가 들어오면, url 처리를 담당할 핸들러가 있나요? 하고 물어보는 것
-디스패쳐서블릿이 있다고 응답 시, 우리가 만든 컨트롤러로 보냄 없을 시 default 서블릿이라는 게 하나 붙어서 그 친구가 동작함 찾으려던 게 없으면 얘한테 넘어가는 거
-그리고 해당 url에 대한 처리가 가능하면 정적 resource 처리, 없으면 404 에러
+<code>DispatcherServlet</code>로부터 "request가 들어오면, url 처리를 담당할 핸들러가 있나요?" 하고 물어본다면, 이 질문에 대한 응답을 하는 역할을 합니다.
 
-어쨌든, default-servlet-handler를 설정하면
-url 처리 핸들러 있나요? 보냄
-없나요? 디폴트 서블릿으로 보냄
-해당 url 처리 가능한가요? 정적 리소스
-못하나요? 404 에러
+정확히, <code>DispatcherServlet</code>이 "url을 처리할 핸들러가 있다"고 응답 시, 우리가 만든 컨트롤러로 보냅니다. 이때 우리가 만든 컨트롤러가 없을 시 디폴트 서블릿이 하나 붙어서서 동작을 하게 됩니다. 즉 찾으려던 게 없으면 얘한테 넘어가는 건데요. 이후 갈 곳 잃은 해당 url에 대한 처리가 가능한지 아닌지에 대해 한 번 더 따진 뒤, 가능하다면 <code>정적 resource</code>로 처리, 없으면 <code>404 ERROR</code>를 리턴합니다.
 
 ### Model
-model이란 클래스가 있음
-모델에 실어서 보내는데, 모델을 직접 보내는 게 아니라 모델에 실으면 jsp가 땡겨서 보냄 개념적으로 
 
-### 프론트 컨트롤러 패턴
-
-
-
-### Spring Web MVC
-
+<code>model</code>이란 클래스가 있습니다. 이 모델에 실어서 보내는데, 모델을 직접 보내는 게 아니라 모델에 실으면 jsp가 땡겨서 보냅니다.
 
 ### Handler Mapping
 
-Hadler Mapping Interface가 4개 정도 됨
-
-이중에 한 개만 기억하면 됨 -> RequestMappingHandlerMapping
-@RequestMapping annotation 사용할 거
--> class가 아닌 method를 handler로 지정
-
+<code>Hadler Mapping Interface</code>가 4개 정도 됩니다. 이 중 기억할 만한 중요한 개념 한 개가 있습니다. <code>RequestMappingHandlerMapping</code>
 
 ### Handler Adapter
-HandlerAdapter Interface
-RequestMappingHandlerAdapter Class 사용
+<code>HandlerAdapter Interface</code> 중 <code>RequestMappingHandlerAdapter</code> 클래스를 사용합니다.
 
 ### View
+> 모델이 가진 정보를 어떻게 표현할지에 대한 로직을 갖는 컴포넌트
 
-View 객체는 View Interface를 구현한 객체를 지칭함 
-모델이 가진 정보를 어떻게 표현해야 하는지에 대한 로직을 가지고 있는 컴포넌트임
+View 객체는 <code>View Interface</code>를 구현한 객체를 지칭합니다. 모델이 가진 정보를 어떻게 표현해야 하는지에 대한 로직을 가지고 있는 컴포넌트입니다.
 
-View Interface를 구현한 클래스가 스프링에 의해 여러 개 제공 되고 있음
-가장 대표적인 게 InternalResourceView
-얘 어떻게 만듦?
+<code>View Interface</code>를 구현한 클래스가 스프링에 의해 여러 개 제공 되고 있는데요. 이 중 가장 대표적인 게 <code>InternalResourceView</code>
+
+그럼 이 친구는 어떻게 만들어 사용할까요?
+
 ```java
 // 이 jsp 파일로 view 객체를 만드는 것
 View view = new InternalResourceView("hello.jsp");
@@ -328,12 +303,7 @@ return new ModelAndView(view, model);
 // 해당 과정을 통해 DispatcherServlet이 View 객체를 얻을 수 있음
 ```
 
-만약 뷰 객체를 보내기 싫으면 그냥 문자열만 보내면, 디스패쳐서블릿이 뷰리져브에게 뷰 객체를 만들게끔 리턴함
-
-
-
-
-
+만약 View 객체를 보내기 싫으면 그냥 문자열만 보낼 수 있습니다. 그렇게 하면, <code>DispatcherServlet</code>이 <code>viewresolve</code>에게 뷰 객체를 만들게끔 리턴합니다.
 
 서블릿에서 response.sendRedirect()처럼
 컨트롤러에서 new ModelAndView("", "")를 만드는데,
@@ -341,8 +311,6 @@ return new ModelAndView(view, model);
 
 MarshallingView -> XML
 MappingJacksonJsonView Class -> JSON
-
-
 
 ### logger
 
