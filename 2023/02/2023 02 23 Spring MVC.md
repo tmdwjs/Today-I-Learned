@@ -195,35 +195,30 @@ public class HomeController {
 
 서블릿을 등록할 때 중복된 코드가 계속 들어가는 경우가 있습니다. 이렇게 중복된 코드가 계속 반복되면 유지보수도 힘들고 올바른 코드 작성 관점이랑도 거리가 멀어지게 됩니다. 따라서 중복되는 코드를 모아 하나의 서블릿으로 만들어 사용하는데, 이런 서블릿을 <code>Front Servlet</code>이라 하며 이러한 패턴을 <code>Front Controller Pattern</code>이라고 합니다.
 
-이와 같은 기능이 스프링에서도 제공이 되는데요. 그게 바로 
-dispatcher servlet(공통 처리)를 만들 때 가장 큰 장점은 controller를 만들 때 서블릿이 아닌 일반 자바 클래스로 만들어도 됨 예전엔 전부 서블릿으로 만들어야 했지만, 스프링에 들어오면서 그럴 일이 사라짐 이것이 
+이와 같은 기능이 스프링에서도 제공이 되는데요. 그게 바로 <code>DispatcherServlet</code>입니다.
 
-스프링이 제공해주는 
-걔를 이용해서 모든 클ㄹ라이언트 요청을 받을 거고
-실제 내가 컨트롤러라 하는 건 일반 클래스
-src/main/java/my.spring.springweb
-안에 HomeController.java 있음
+### DispatcherServlet
 
-클래스 위에 @Component가 있으면 bean으로 등록한단 건데,
-@Component가 @Controller의 상위이기 때문에,
-클래스에 @Controller라 명시하면 얘는 bean으로 등록됨
-#### HomeController.java
+<code>DispatcherServlet</code>를 만들 때 가장 큰 장점은, 이전 게시판 프로젝트에서는 모든 컨트롤러를 서블릿으로 만들었는데, 이제는 컨트롤러를 만들 때 서블릿이 아닌 일반 자바 클래스로 만들어도 된다는 것입니다. 예전엔 전부 서블릿으로 만들어야 했지만, 스프링에 들어오면서 그럴 일이 사라진 것입니다.
+
+### HomeController.java
 > my.spring.springweb/HomeController.java
-DispatcherServlet으로부터 전달된 request를 처리하는 Controller(Handler)
+<code>DispatcherServlet</code>로부터 전달된 request를 처리하는 컨트롤러(핸들러)입니다.
 
-서블릿이 가지고 있는 특정 서블릿이 기동이 됨
-
-#### webapp
+### webapp
 > src/main/webapp
-Web의 Home
+
+Web의 홈입니다.
 
 #### resources
 > src/main/webapp/resources
-정적 Resource(HTML, CSS, JS, images 등)
+
+정적 Resource(HTML, CSS, JS, images 등)가 존재합니다.
 
 #### WEB-INF
 > src/main/webapp/WEB-INF
-여기에는 client가 직접적으로 접근할 수 없음
+
+여기에는 클라이언트가 직접적으로 접근할 수 없습니다. 이전 게시판 프로젝트에서 페이지 이동 시 사용했던 방법처럼 jsp 파일에서 jsp로 이동을 직접 하는 게 아닌, 서블릿을 거쳐서 
 
 #### servlet-context.xml
 > src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml
