@@ -195,6 +195,11 @@ public class HomeController {
 
 서블릿을 등록할 때 중복된 코드가 계속 들어가는 경우가 있습니다. 이렇게 중복된 코드가 계속 반복되면 유지보수도 힘들고 올바른 코드 작성 관점이랑도 거리가 멀어지게 됩니다. 따라서 중복되는 코드를 모아 하나의 서블릿으로 만들어 사용하는데, 이런 서블릿을 <code>Front Servlet</code>이라 하며 이러한 패턴을 <code>Front Controller Pattern</code>이라고 합니다.
 
+<img width="608" alt="스크린샷 2023-02-23 오후 6 18 20" src="https://user-images.githubusercontent.com/85447054/220868423-b744399f-0169-4182-affb-cddc60104964.png">
+
+<img width="785" alt="스크린샷 2023-02-23 오후 6 18 45" src="https://user-images.githubusercontent.com/85447054/220868452-03ceac44-6db0-4e21-bd52-1ed931d30f4c.png">
+
+
 이와 같은 기능이 스프링에서도 제공이 되는데요. 그게 바로 <code>DispatcherServlet</code>입니다.
 
 ### DispatcherServlet
