@@ -104,6 +104,7 @@
 
 ## Controller, RequestMapping
 > @Controller: 특정 클래스가 컨트롤러 역할을 하는 Bean임을 나타내는 어노테이션
+
 > @RequestMapping: 특정 URL로 Request를 보내면 Controller에서 어떠한 방식으로 처리할지 정의
 
 ```java
