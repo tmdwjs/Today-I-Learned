@@ -1,11 +1,3 @@
-## 목차
-- [log4j](#log4j)
-- [@Controller](#controller)
-- [@RequestMapping](#requestmapping)
-- [InternalResourceView Class](#internalresourceview-class)
-- [Model & ModelAndView Calss](#model-modelandview-class)
-- [EL(Expression Language)](#el-expression-language)
-
 ## log4j
 > log4j를 사용해 보자
 
@@ -110,21 +102,20 @@
 </logger>
 ```
 
-## Controller
-> 특정 클래스가 컨트롤러 역할을 하는 Bean임을 나타내는 어노테이션
+---
 
-## RequestMapping
+## Controller, RequestMapping
+> @Controller: 특정 클래스가 컨트롤러 역할을 하는 Bean임을 나타내는 어노테이션
+> @RequestMapping: 특정 URL로 Request를 보내면 Controller에서 어떠한 방식으로 처리할지 정의
 
 ```java
 @RequestMapping(value="url path")
 ```
 
-### TestController01
+### sample01/TestController01
 > @Controller와 @RequestMapping 학습
 
 ```java
-// TestController01.java
-
 package my.spring.springweb.sample01;
 
 import org.slf4j.Logger;
@@ -157,8 +148,6 @@ public class TestController01 {
 ```
 
 ```jsp
-<!-- testController01.jsp -->
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -182,8 +171,6 @@ URL 접속 시 다음과 같이 출력됩니다.
 > 경로 계층 구조로 작성
 
 ```java
-// TestController02.java
-
 package my.spring.springweb.sample01;
 
 import org.slf4j.Logger;
@@ -231,8 +218,6 @@ URL 접속 시 다음과 같이 출력됩니다.
 > GetMapping(params="") 사용
 
 ```java
-// TestController05.java
-
 package my.spring.springweb.sample01;
 
 import org.slf4j.Logger;
@@ -262,203 +247,6 @@ public class TestController05 {
 
 URL 접속 시 다음과 같이 출력됩니다.
 
+---
+
 ## InternalResourceView Class
-
-## Model ModelAndView Class
-
-### sample01/TestController07
-> Model 사용
-
-```java
-// TestController07.java
-
-package my.spring.springweb.sample01;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-@Controller
-@RequestMapping("/testController07")
-public class TestController07 {
-	private static final Logger logger = LoggerFactory.getLogger(TestController07.class);
-	
-	@GetMapping
-	public String MyMethod(Model model) {
-		// Model 안에 담아 렌더링 해 출력
-		// ApplicationContext에 의해 Model 객체가 주입됨
-		
-		logger.debug("testController07이 호출됨");
-		
-		// 모델 객체에 데이터를 실어줄 건데,
-		// 모델은 Map으로 돼 있음
-		// key: value 형태로 데이터를 저장
-		
-		// setAttribute 아님
-		model.addAttribute("myName", "백승전");
-		model.addAttribute("myAge", 100);
-		
-		// testController07.jsp로 이동
-		return "sample01/testController07";
-	}
-}
-```
-
-```jsp
-<!-- testController07.jsp -->
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-	<h1>testController07 호출</h1>
-
-	
-	<!-- 모델 안에 저장돼 있는 데이터를 들고와 여기서 출력해야 됨 -->
-	<!-- 출력을 하기 위해 기존 JSP의 표현식과 비슷한 EL을 사용할 것 -->
-
-	<!--	EL의 데이터 표기 방식 ${ } -->
-  <!-- 참고로 html이 아닌 JSP의 주석을 따라간다 -->
-  <!-- JSP 파일에서, HTML 주석 안에 ${ }만 작성하면 실제로 오류 출력됨 -->
-
-	<!-- model은 request scope 안에 있는 객체 -->
-	<ul>
-	 	<li>이름: ${myName}</li> <!-- 백승전 -->
-	 	<li>나이: ${myAge}</li> <!-- 100 -->
-	</ul>
-</body>
-</html>
-```
-
-URL 접속 시 다음과 같이 출력됩니다.
-
-## EL 
-
-<code>EL</code>은 Expression Language의 약자로, JSP 표현식과 비슷하며, JSP 2.0 spec 안에 포함돼 있습니다. <code>SP의 JSP Expression</code>J(<%= %>)이나 <code>JJSTL, JSP Scriptlet</code>J(<% %>) 대신 사용합니다.
-
-사용은 다음과 같습니다.
-
-```jsp
-<!-- 모델의 key 값이 myName이면, 지금처럼 key값만 가져오면 된다 -->
-${myName}
-```
-
-<code>pageScope</code> -> <code>requestScope</code> -> <code>seesionScope</code> -> <code>applicationScope</code> 순으로 스코프란 공간을 돌며 모델 객체를 찾아서 값을 찍습니다.
-
-### Scope들의 대표 객체
-- pageScope
-  - page Context 객체
-- requestScope
-  - request
-  - model
-    - 모델 객체가 request scope를 가짐
-- sessionScope
-  - Session
-- applicationScope
-  - Servlet Context
-
-<code>EL</code>은 스코프를 명시할 수 있습니다. 만약 찾고자 하는 값이 상위 스코프에 걸려 원하는 값을 가져오지 못할 수 있기 때문에, 스코프를 명시하면 명시한 영역 내에서만 확인하고, 명시하지 않으면 맨 처음에 값이 나올 때까지 모든 스코프를 돌며 찾습니다. 참고로 모델 객체는 <code>requestScope</code> 객체입니다.
-
-### EL의 표현법, 연산, 내장 객체에 대해 알아보자
-
-### 내장 객체
-1. pageScope
-2. requestScope
-3. sessionScope
-4. applicationScope
-> 1~4번은 해당 스코프를 access 할 때 사용하는 내장 객체
-
-5. param
-  - 클라이언트 request parameter의 이름과 값을 가지고 있는 내장 객체
-6. header
-  - 클라이언트 request header 정보
-7. cookie
-
-### sample01/TestController08
-
-```html
-<!-- testController08.html -->
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-
-<body>
-	<h1>EL 예제</h1>
-  <!-- 입력폼을 한 개 가지고 있으며, 이름과 나이를 입력할 수 있다 -->
-	<form action="/springweb/testController08/userEL" method="POST">
-		이름: <input type="text" name="userName" /> <!-- 이름 입력폼 -->
-		<br><br>
-		나이: <input type="number" name="userAge" /> <!-- 나이 입력폼 -->
-		<br><br>
-		<input type="submit" value="서버로 전송" /> <!-- 클릭 시 서버로 전송 -->
-	</form>
-</body>
-</html>
-```
-
-```java
-// TestController08.java
-
-package my.spring.springweb.sample01;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import my.spring.springweb.sample01.vo.User;
-
-@Controller
-@RequestMapping(value = "/testController08")
-public class TestController08 {
-	private static final Logger logger = LoggerFactory.getLogger(TestController08.class);
-
-	// HTML에서 POST로 넘기기 때문에 어노테이션을 PostMapping으로 잡음
-	@PostMapping("userEL") // value 값 넣기
-	public String myMethod(Model model) {
-		
-    // map 형태의 모델 객체
-    // 모델에 여러가지 예제를 입력해보고 출력해 볼 예정
-
-    // 1. 객체
-		model.addAttribute("myName", "백승전");
-		model.addAttribute("myAge", 27);
-		
-    // 2. 리스트
-		List<String> list = new ArrayList<String>();
-		list.add("손석구");
-		list.add("유아인");
-		model.addAttribute("myList", list);
-		
-    // 3. User VO
-		User user = new User("백승전", 200);
-		model.addAttribute("myUser", user);
-		
-		return "sample01/testController08";
-	}
-}
-```
-
-```jsp
-<!-- testController08.jsp -->
-
-
-```
