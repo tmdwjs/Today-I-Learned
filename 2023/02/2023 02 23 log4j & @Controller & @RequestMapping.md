@@ -102,8 +102,6 @@
 </logger>
 ```
 
----
-
 ## Controller, RequestMapping
 > @Controller: 특정 클래스가 컨트롤러 역할을 하는 Bean임을 나타내는 어노테이션
 > @RequestMapping: 특정 URL로 Request를 보내면 Controller에서 어떠한 방식으로 처리할지 정의
@@ -163,9 +161,9 @@ public class TestController01 {
 </html>
 ```
 
-URL 접속 시 다음과 같이 출력됩니다.
+#### 결과
 
-<img src="스크린샷 2023-02-24 오후 1.46.51.png" />
+<img width="636" alt="스크린샷 2023-02-24 오후 1 46 51" src="https://user-images.githubusercontent.com/85447054/221357419-e40813e7-91dd-476d-a44f-472fb49e7a8e.png">
 
 ### sample01/TestController02
 > 경로 계층 구조로 작성
@@ -212,7 +210,12 @@ public class TestController02 {
 
 ```
 
-URL 접속 시 다음과 같이 출력됩니다.
+#### 결과
+
+<img src="https://user-images.githubusercontent.com/85447054/221357513-313998c3-4aed-4bce-8be4-ef44d43e00c9.png" width="650" />
+<img src="https://user-images.githubusercontent.com/85447054/221357517-2173e568-d6a2-4a13-93b4-199a3eeabcd7.png" width="650" />
+<img src="https://user-images.githubusercontent.com/85447054/221357520-d5a82a31-b49b-4cc2-9b9f-74a28141afbd.png" width="650" />
+<img src="https://user-images.githubusercontent.com/85447054/221357524-7a735a4b-fcb5-496b-aceb-8ab1f630e9b1.png" width="650" />
 
 ### sample01/TestController05
 > GetMapping(params="") 사용
@@ -245,8 +248,8 @@ public class TestController05 {
 }
 ```
 
-URL 접속 시 다음과 같이 출력됩니다.
+#### 결과
 
----
+<img src="https://user-images.githubusercontent.com/85447054/221357611-5320f458-31ed-45af-a8d3-4098973cd72e.png" width="650" />
 
 ## InternalResourceView Class
