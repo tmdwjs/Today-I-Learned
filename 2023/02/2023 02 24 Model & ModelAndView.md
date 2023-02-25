@@ -31,7 +31,7 @@ public class TestController07 {
 		
 		// setAttribute 아님
 		model.addAttribute("myName", "백승전");
-		model.addAttribute("myAge", 100);
+		model.addAttribute("myAge", 25);
 		
 		// testController07.jsp로 이동
 		return "sample01/testController07";
@@ -63,12 +63,15 @@ public class TestController07 {
 	<!-- model은 request scope 안에 있는 객체 -->
 	<ul>
 	 	<li>이름: ${myName}</li> <!-- 백승전 -->
-	 	<li>나이: ${myAge}</li> <!-- 100 -->
+	 	<li>나이: ${myAge}</li> <!-- 25 -->
 	</ul>
 </body>
 </html>
 ```
 
-URL 접속 시 다음과 같이 출력됩니다.
+#### 결과
+
+<img width="495" alt="image" src="https://user-images.githubusercontent.com/85447054/221358034-96f72480-35c9-450e-a74d-9eba60bec898.png">
 
 ### sample02/CalcController
+> ModelAndView 사용
