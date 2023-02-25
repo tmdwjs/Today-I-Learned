@@ -1,6 +1,6 @@
 ## EL 
 
-<code>EL</code>은 Expression Language의 약자로, JSP 표현식과 비슷하며, JSP 2.0 spec 안에 포함돼 있습니다. <code>SP의 JSP Expression</code>J(<%= %>)이나 <code>JJSTL, JSP Scriptlet</code>J(<% %>) 대신 사용합니다.
+<code>EL</code>은 Expression Language의 약자로, JSP 표현식과 비슷하며, JSP 2.0 spec 안에 포함돼 있습니다. <code>JSP의 JSP Expression</code>(<%= %>)이나 <code>JSTL, JSP Scriptlet</code>(<% %>) 대신 사용합니다.
 
 사용은 다음과 같습니다.
 
