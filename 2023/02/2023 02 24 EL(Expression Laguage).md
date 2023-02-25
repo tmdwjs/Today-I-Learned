@@ -11,7 +11,8 @@ ${myName}
 
 <code>pageScope</code> -> <code>requestScope</code> -> <code>seesionScope</code> -> <code>applicationScope</code> 순으로 스코프란 공간을 돌며 모델 객체를 찾아서 값을 찍습니다.
 
-### Scope들의 대표 객체
+### 내장 객체
+#### 스코프들의 대표 객체
 - pageScope
   - page Context 객체
 - requestScope
@@ -23,22 +24,14 @@ ${myName}
 - applicationScope
   - Servlet Context
 
-<code>EL</code>은 스코프를 명시할 수 있습니다. 만약 찾고자 하는 값이 상위 스코프에 걸려 원하는 값을 가져오지 못할 수 있기 때문에, 스코프를 명시하면 명시한 영역 내에서만 확인하고, 명시하지 않으면 맨 처음에 값이 나올 때까지 모든 스코프를 돌며 찾습니다. 참고로 모델 객체는 <code>requestScope</code> 객체입니다.
-
-### EL의 표현법, 연산, 내장 객체에 대해 알아보자
-
-### 내장 객체
-1. pageScope
-2. requestScope
-3. sessionScope
-4. applicationScope
-> 1~4번은 해당 스코프를 access 할 때 사용하는 내장 객체
-
-5. param
+#### 그 외 객체
+- param
   - 클라이언트 request parameter의 이름과 값을 가지고 있는 내장 객체
-6. header
+- header
   - 클라이언트 request header 정보
-7. cookie
+- cookie
+
+<code>EL</code>은 스코프를 명시할 수 있습니다. 만약 찾고자 하는 값이 상위 스코프에 걸려 원하는 값을 가져오지 못할 수 있기 때문에, 스코프를 명시하면 명시한 영역 내에서만 확인하고, 명시하지 않으면 맨 처음에 값이 나올 때까지 모든 스코프를 돌며 찾습니다. 참고로 모델 객체는 <code>requestScope</code> 객체입니다.
 
 ### sample01/TestController08
 
@@ -166,4 +159,7 @@ public class TestController08 {
 </html>
 ```
 
-이미지
+#### 결과
+
+![image](https://user-images.githubusercontent.com/85447054/221357685-9f74a10e-61d2-4b95-9898-93b79ff15979.png)
+<img width="731" alt="스크린샷 2023-02-25 오후 9 16 41" src="https://user-images.githubusercontent.com/85447054/221357732-074d42a5-52c5-4e88-8ecc-dae52163f18f.png">
