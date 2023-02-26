@@ -199,3 +199,13 @@ public ModelAndView process(@RequestParam("firstNum") int firstNum, @RequestPara
 </body>
 </html>
 ```
+
+#### 결과
+> 1 + 2
+<img width="468" alt="image" src="https://user-images.githubusercontent.com/85447054/221407166-6a16b49d-7283-4639-9b12-afe393ddc2af.png">
+
+> 1 / 0
+<img width="486" alt="image" src="https://user-images.githubusercontent.com/85447054/221407180-404fc0be-f3fa-4c76-9d3c-9bbe894e1b59.png">
+
+
+```jsp
