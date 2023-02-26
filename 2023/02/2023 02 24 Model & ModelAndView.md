@@ -75,3 +75,127 @@ public class TestController07 {
 
 ### sample02/CalcController
 > ModelAndView 사용
+>> 계산기 만들기
+
+```html
+<!-- calcForm.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>연산할 두 개 숫자를 입력하고 연산자를 선택하세요.</h1>
+	<br><br>
+	<form action="/springweb/calc.do" method="post">
+		<input type="number" name="firstNum" required="required" placeholder="첫 번째 숫자를 입력하세요." /> <!-- required는 값이 없으면 전송 안 됨 -->
+		
+		<select name="operator">
+			<option value="plus"> + </option>
+			<option value="min"> - </option>
+			<option value="mult"> * </option>
+			<option value="div"> / </option>
+		</select>
+		
+		<input type="number" name="secondNum" required="required" placeholder="두 번째 숫자를 입력하세요." />
+		
+		<br>
+		
+		<input type="submit" value="계산하기" />
+	</form>
+</body>
+</html>
+```
+
+```java
+// CalcController.java
+
+package my.spring.springweb.sample02;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+@RequestMapping("/calc.do")
+public class CalcController {
+	private static final Logger logger = LoggerFactory.getLogger(CalcController.class);
+
+	@PostMapping
+	// 1. ModelAndView 타입 객체 생성
+	public ModelAndView process(int firstNum, int secondNum, String operator) {
+		// 2. 사용자가 보내준 데이터를 받아야 함
+		// @RequestParam("")을 이용해서 받음(String primitive type인 경우)
+		// 그렇게 되면 인자를 다음과 같이 들어옴
+
+		// (@RequestParam("firstNum") int firstNum, @RequestParam("secondNum") int secondNum,
+		// @RequestParam("operator") String operator, Model model)
+
+		// 하지만 이는 생략이 가능하다
+		// 보다시피 @RequestParam("") 안에 이름과, param 값이 같은 것을 확인할 수 있는데,
+		// 같게 작성하면, 이런 경우에는 맨 위에 작성한 것처럼 @RequestParam("")을 생략이 가능해 축약해 작성할 수 있다
+		// 하지만 저렇게 풀 네임으로 다 써 주는 게 원칙이긴 하다
+		
+		ModelAndView mav = new ModelAndView();
+		String viewName = "";
+		
+		if(operator.equals("div") && secondNum == 0) {
+			// 나눗셈 하는데 당연히 분모가 0이면 안 됨. 무한대 개념이 없어서 Exception 처리 됨
+			// 이런 경우 error message를 출력하는 jsp로 보내자
+			viewName = "sample02/errorResult"; // 3. 실패 시 error 페이지
+			mav.addObject("msg", "0으로 나눌 수 없어요.");
+		}else {
+			int result = 0;
+			
+			if(operator.equals("plus")) {
+				result = firstNum + secondNum;
+			}else if(operator.equals("minu")) {
+				result = firstNum - secondNum;
+			}else if(operator.equals("mult")) {
+				result = firstNum * secondNum;
+			}else {
+				result = firstNum / secondNum;
+			}
+			
+			viewName = "sample02/calcResult"; // 3. 성공 시 이동할 문자열 jsp 명시해주고
+			mav.addObject("msg", result); // 4. ModelAndView에 담기
+		}
+		
+		mav.setViewName(viewName); // 5. ModelAndView 세팅
+		return mav;
+	}
+}
+
+public ModelAndView process(@RequestParam("firstNum") int firstNum, @RequestParam("secondNum") int secondNum,
+		@RequestParam("operator") String operator, Model model) {
+	// 2. 사용자가 보내준 데이터를 먼저 받아야 함
+
+	return null;
+}
+```
+
+```jsp
+<!-- calcResult -->
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>연산 성공.</h1>
+	<h3> msg 결과는: ${ requestScope.msg }</h3>
+	
+ 	<a href="${ header.referer }"> 뒤로 가기 </a>
+</body>
+</html>
+```
