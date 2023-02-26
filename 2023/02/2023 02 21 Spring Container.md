@@ -102,4 +102,4 @@ class MyResourceConfig {
 만약 <code>A</code> - - -> <code>B</code>와 같이 화살표로 방향성을 나타내면 이는 <code>A</code>가 <code>B</code>에 의존한다 할 수 있습니다.
 이런 경우 <code>A</code>의 입장에서는 의존 대산인 <code>B</code>가 변하면 그 영향이 <code>A</code>에 미친다는 것을 의미합니다.
 
-dependency injection은 두 가지가 있음 setter와 contructor(생성자)
+Dependency Injection에는 <code>setter</code>와 <code>contructor</code> 두 가지가 있습니다.
