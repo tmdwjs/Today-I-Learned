@@ -87,3 +87,4 @@ public class PathController {
 #### 결과
 > /character/detail/kakao/1으로 접속 시
 >> ryan이 출력되는지 확인해 보자
+
