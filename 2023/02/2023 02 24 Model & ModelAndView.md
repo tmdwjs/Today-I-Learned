@@ -206,6 +206,3 @@ public ModelAndView process(@RequestParam("firstNum") int firstNum, @RequestPara
 
 > 1 / 0
 <img width="486" alt="image" src="https://user-images.githubusercontent.com/85447054/221407180-404fc0be-f3fa-4c76-9d3c-9bbe894e1b59.png">
-
-
-```jsp
