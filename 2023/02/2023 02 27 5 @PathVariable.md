@@ -88,3 +88,4 @@ public class PathController {
 > /character/detail/kakao/1으로 접속 시
 >> ryan이 출력되는지 확인해 보자
 
+![image](https://user-images.githubusercontent.com/85447054/221717551-436692a9-17a3-4ba9-b1f6-af7590da08c8.png)
