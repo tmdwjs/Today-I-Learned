@@ -1,6 +1,6 @@
 ## @RequestParam
 
-### 1. 이름, 아이디, 비밀번호, 번호 입력
+### @RequestParam 예제 1: 이름, 아이디, 비밀번호, 번호 입력
 ```html
 <!DOCTYPE html>
 <html>
@@ -87,7 +87,7 @@ public class MemberController {
 ![image](https://user-images.githubusercontent.com/85447054/221524900-9162c1a1-cbd6-4444-b948-89405cfda791.png)
 
 
-### 2. VO로 넘겨주기
+### @RequestParam 예제 2: VO로 넘겨주기
 ```html
 <!DOCTYPE html>
 <html>
@@ -180,7 +180,7 @@ public class MemberController {
 ![image](https://user-images.githubusercontent.com/85447054/221524923-6995d207-a2d8-49ce-8d1a-6344b5fe2cc0.png)
 
 
-### 3. VO에 이름 설정
+### @RequestParam 예제 3: VO에 이름 설정
 ```html
 <!DOCTYPE html>
 <html>
@@ -283,7 +283,7 @@ public class MemberController {
 ![image](https://user-images.githubusercontent.com/85447054/221524959-bde47333-c51d-4567-973e-329b6c21b8c2.png)
 
 
-### 4. VO 외 다른 값 입력하기
+### @RequestParam 예제 4: VO 외 다른 값 입력하기
 ```html
 <!DOCTYPE html>
 <html>
