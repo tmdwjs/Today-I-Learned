@@ -60,8 +60,7 @@
 
 ## produces
 
-
-여기서 지정한다는 의미는 서버가 클라이언트에게 데이터를 리턴할 때, 그 데이터를 해당 타입으로 변환하겠다는 얘기는 아닙니다. 나중에 나오겠지만 <code>produces</code>는 혼자 안 쓰이고 <code>@ResponeseBody</code>라는 어노테이션과 함께 쓰입니다
+<code>produces</code>는 리턴하는 데이터의 <code>content-type</code>을 지정하는 역할을 합니다. 여기서 지정한다는 의미는 서버가 클라이언트에게 데이터를 리턴할 때, 그 데이터를 해당 타입으로 '변환'하는 게 아닌 '정의'해주는 느낌으로 사용됩니다. <code>produces</code>의 사용은 나중에 나오겠지만 <code>produces</code>는 혼자 안 쓰이고 <code>@ResponeseBody</code>라는 어노테이션과 함께 쓰입니다.
 
 ---
 
