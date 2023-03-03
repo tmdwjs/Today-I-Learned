@@ -242,7 +242,7 @@ public class RequestMappingProducesController {
 }
 ```
 
-![](2023-03-02-18-16-22.png)
+![](./images/2023-03-02-18-16-22.png)
 
 ---
 

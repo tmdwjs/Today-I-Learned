@@ -47,7 +47,7 @@ public class Book {
 </html>
 ```
 
-![](2023-03-03-15-27-54.png)
+![](./images/2023-03-03-15-27-54.png)
 
 ## Controller
 > BookController.java
@@ -266,13 +266,13 @@ public class BookDaoImpl implements BookDao{
 
 ### 책 개수
 
-![](2023-03-03-15-29-40.png)
+![](./images/2023-03-03-15-29-40.png)
 
 ### 책 종류
 
-![](2023-03-03-15-30-01.png)
+![](./images/2023-03-03-15-30-01.png)
 
 ### 검색한 책
 > 자바로 검색
 
-![](2023-03-03-15-30-27.png)
+![](./images/2023-03-03-15-30-27.png)
