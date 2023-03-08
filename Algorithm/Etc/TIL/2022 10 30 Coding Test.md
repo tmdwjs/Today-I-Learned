@@ -1,4 +1,4 @@
-### 백준
+# 백준
 
 [조건문](https://www.acmicpc.net/step/4)<br>
 [반복문](https://www.acmicpc.net/step/3)<br>

@@ -1,10 +1,10 @@
-### Counter App
+# Counter App
 
-#### 데모 영상
+## 데모 영상
 
 <img src='https://user-images.githubusercontent.com/85447054/197348101-5fb48b70-4556-4e7b-9773-f16ea67702c6.gif' width='600' >
 
-#### 작성 코드
+## 작성 코드
 
 ```js
 // src/modules/counter.ts
@@ -191,8 +191,6 @@ function App() {
 export default App;
 ```
 
----
-
-### 참고
+# 참고
 
 https://react.vlpt.us/using-typescript/05-ts-redux.html

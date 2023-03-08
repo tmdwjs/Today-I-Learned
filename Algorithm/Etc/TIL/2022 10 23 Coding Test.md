@@ -1,10 +1,10 @@
-### 프로그래머스
+# 프로그래머스
 
-#### 문제
+## 문제
 
 [타겟 넘버(자바스크립트/레벨 2)](https://school.programmers.co.kr/learn/courses/30/lessons/43165)
 
-#### 코드
+## 코드
 
 ```js
 function solution(numbers, target) {

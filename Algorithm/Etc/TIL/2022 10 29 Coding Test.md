@@ -1,10 +1,10 @@
-### 프로그래머스 
+# 프로그래머스 
 
-#### 문제
+## 문제
 
 [다리를 지나는 트럭(자바스크립트/레벨 2)](https://school.programmers.co.kr/learn/courses/30/lessons/42583)
 
-#### 코드
+## 코드
 
 ```js
 function solution(bridge_length, weight, truck_weights) {
@@ -35,9 +35,7 @@ function solution(bridge_length, weight, truck_weights) {
 }
 ```
 
----
-
-### 백준
+# 백준
 
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/85447054/198820693-a967c35c-eb9b-4922-9040-3998636ca7e7.png">
 

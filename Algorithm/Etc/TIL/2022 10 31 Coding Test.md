@@ -1,10 +1,10 @@
-### 백준
+# 백준
 
-#### 문제
+## 문제
 
 [DFS와 BFS(자바스크립트/1260번)](https://www.acmicpc.net/problem/1260)
 
-#### 코드
+## 코드
 
 ```text
 입력
@@ -88,13 +88,11 @@ bfs(start);
 console.log(answer_bfs.join(' '));
 ```
 
----
-
-### DFS와 BFS
+# DFS와 BFS
 
 깊이 우선 탐색인 DFS(Depth First Search)와 너비 우선 탐색인 BFS(Breadth First Search)는 그래프 탐색 알고리즘의 대표적인 유형입니다.
 
-#### 그래프
+# 그래프
 
 여기서 그래프란 <code>정점(node)</code>과 그 정점을 연결하는 <code>간선(edge)</code>으로 이루어진 자료 구조입니다.
 
