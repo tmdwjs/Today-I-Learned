@@ -24,3 +24,24 @@ x1     x2       t
 <code>Logistic Regression</code>은 모델이 <code>y = 1 / 1 + e^-(xw + b)</code> 식의 형태를 가지고 있습니다. 이 모델 역시 예측치와 실제값을 비교해보려 시도했지만 그것에 실패한 것이고요. 하지만 저희는 <code>loss</code>를 계산하긴 해야 하기 때문에 <code>MSE</code>가 아닌 다른 수식을 찾고자 합니다. 그 수식이 <code>Cross Entropy</code>입니다. 수식은 <code>y = - Σi p(xi) * log(q(xi))</code>로 나타낼 수 있습니다.
 
 예측치는 0과 1 사이의 값이 나오게 됩니다. 만약 0.3이 나온다면 1이 될 확률이 30%, 0.7이 나온다면 1이 될 확률은 70%로 볼 수 있습니다. 즉, 예측치는 확률값으로 나오게 됩니다.
+
+```py
+# ㅎㅇㅎㅇ
+```
+
+## Evalueation
+> 평가
+
+<code>Logistic Regression</code>으로 넘어가면서, 평가를 진행하게 됩니다. <code>Linear Regression</code>도 평가를 진행해야 하지만, 보통 <code>Logistic Regression</code>으로 넘어가면서 평가 이야기가 나오는 편입니다.
+
+### 1. 평가 방법(데이터 관점)
+
+<code>Training Data Set</code> 우리가 가지고 있는 데이터를 의미합니다. 위 예제를 기준으로 약 400개가 있다고 가정해 보겠습니다. 이를 일반적으로 7:3 혹은 8:2 비율로 데이터를 자릅니다. 이때 7 혹은 8 비율을 학습 데이터(<code>Training Data Set</code>), 나머지 비율을 시험 데이터(<code>Test Data Set</code>)이라고 합니다. 시험 데이터는 최종 단계에서 딱 한 번 사용합니다.
+
+7의 비율 중, 또 약 7:3 정도로 나눠, 7이 <code>Training Data Set</code>, 나머지를 <code>Validation Data Set</code>라고 합니다. <code>Validation Data Set</code>은 학습이 진행되면서 학습이 잘 진행되는지 아닌지를 확인하기 위한 평가용 데이터 셋을 의미합니다.
+
+### 2. 평가 기준(Metric)
+
+![](2023-04-03-13-45-34.png)
+
+이를 <code>Confusion Matrix</code>라고 합니다.
