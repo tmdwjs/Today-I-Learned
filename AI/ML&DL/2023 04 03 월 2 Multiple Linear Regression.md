@@ -68,4 +68,15 @@ model.fit(x_data, t_data, epochs=2000, verbose=0)
 
 ```py
 # 5. 모델 예측
+# 예측 내용
+predict_data = np.array([[150.0, 10.0, 80.0]]) # 1행 3열 2차원으로 넣어줘야 함
+# 그대로는 못 넣어줌
+scaled_predict_data = scaler_x.transform(predict_data)
+# print(scaled_predict_data)
+
+result = model.predict(scaled_predict_data) # [[0.2591728]]
+# print(result) 
+
+final_result = scaler_t.inverse_transform(result)
+print(final_result) # [[44.281857]]
 ```
