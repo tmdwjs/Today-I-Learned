@@ -26,7 +26,83 @@ x1     x2       t
 예측치는 0과 1 사이의 값이 나오게 됩니다. 만약 0.3이 나온다면 1이 될 확률이 30%, 0.7이 나온다면 1이 될 확률은 70%로 볼 수 있습니다. 즉, 예측치는 확률값으로 나오게 됩니다.
 
 ```py
-# ㅎㅇㅎㅇ
+# [Logistic Regression]
+
+# 1. 모듈 임포트
+import numpy as np # 넘파이
+import pandas as pd # 판다스
+from sklearn.preprocessing import MinMaxScaler # 정규화 위해, 사이킷 런이 가지고 있는 민맥스 스케일러 임포트
+from tensorflow.keras.models import Sequential # 모델
+from tensorflow.keras.layers import Flatten, Dense # 레이어(기둥(인풋과 아웃풋))
+from tensorflow.keras.optimizers import Adam # 옵티마이저
+from scipy import stats
+```
+
+```py
+# 2. 로우 데이터 로딩 + 데이터 전처리
+# 데이터 전처리는 세 개 진행
+# 1) 결측치
+# 2) 이상치
+# 3) 정규화
+
+df = pd.read_csv('./data/admission.csv')
+display(df, df.shape) # (400, 4)
+
+# 1) 결측치 처리
+# print(df.info()) # info()로 결측치 확인 가능
+
+# 2) 이상치 처리
+# 가장 대표적인 방법은 두 가지
+# (1) Tukey Fence(4분위 이용)
+# (2) Z-Score 방식(정규분포 이용)
+# 여기서는 (2)번 사용. Z-score 방식으로 이성치 걸러내 사용
+zscore_threshold = 2.0 # zscore outliers 임계값 (2.0이하가 optimal)
+
+
+for col in df.columns:
+    outliers = df[col][(np.abs(stats.zscore(df[col])) > zscore_threshold)]
+    df = df.loc[~df[col].isin(outliers)]
+    
+# print(df.shape)  # (382, 4)
+
+# 3) 정규화 진행
+scaler = MinMaxScaler()
+scaler.fit(df[['gre', 'gpa']].values) # 데이터프레임을 구성하고 있는 2차원 넘파이 어레이를 출력 -> scaler에게 전달
+```
+
+```py
+# 3. 트레이닝 데이터 셋
+# 데이터를 준비하는 이 단계에서부터 머신러닝 시작
+# 1) x_data, t_data
+x_data = scaler.transform(df[['gre', 'gpa']].values)
+t_data = df['admit'].values.reshape(-1, 1)
+
+# 2) 모델
+model = Sequential()
+
+# 3) 모델에 레이어 추가
+model.add(Flatten(input_shape=(2, )))
+model.add(Dense(1, activation="sigmoid")) # 예전엔 linear
+
+# 4) 모델 설정
+model.compile(optimizer=Adam(learning_rate=1e-4),
+             loss='binary_crossentropy')
+
+# 5) 모델 학습
+model.fit(x_data, t_data, epochs=2000, verbose=0)
+```
+
+```py
+# 4. 모델 평가
+```
+
+```py
+# 5. 모델 예측
+# 성적 550, 3.5일 때 합격 여부
+predict_data = np.array([[550.0, 3.5]])
+scaled_predict_data = scaler.transform(predict_data)
+result = model.predict(scaled_predict_data) # 0.34.. -> 약 34%
+print(result)
 ```
 
 ## Evalueation
