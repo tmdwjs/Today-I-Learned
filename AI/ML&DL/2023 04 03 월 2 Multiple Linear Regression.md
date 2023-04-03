@@ -1,7 +1,9 @@
 # Multiple Linear Regression
 
+저번주에 배웠던 선형 회귀 분석(<code>Linear Regression</code>)에서, 독립 변수가 둘 이상으로 늘어난 다중 선형 회귀 분석 기법(<code>Multiple Linear Regression</code>)에 대한 내용을 다루고 있습니다.
+
 ```py
-# 다중선형회귀 구현
+# 다중 선형 회귀 구현
 # 오존데이터 가지고 모델 생성
 
 # 1. 모듈 임포트
