@@ -118,6 +118,8 @@ print(result)
 
 ### 2. 평가 기준(Metric)
 
-![](./images/2023-04-03-13-45-34.png)
+![](./images/2023-04-03-14-08-02.png)
 
 이를 <code>Confusion Matrix</code>라고 합니다.
+
+<code>Accuracy(정확도)</code>라고 불리는 메트릭스가 있습니다. 이 수식은 <code>Accuracy = (TP + TN) / (TP + FN + FP + TN)</code>이며, <code>TP + TN + FP + FN</code>은 모두를 더한 것이니, 모든 경우의 수를 의미합니다.
