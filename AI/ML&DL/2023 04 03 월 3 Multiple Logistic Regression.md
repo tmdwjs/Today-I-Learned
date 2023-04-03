@@ -118,6 +118,6 @@ print(result)
 
 ### 2. 평가 기준(Metric)
 
-![](2023-04-03-13-45-34.png)
+![](./images/2023-04-03-13-45-34.png)
 
 이를 <code>Confusion Matrix</code>라고 합니다.
