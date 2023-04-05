@@ -43,4 +43,3 @@
 ## MAX Pooling
 
 이미지에 필터를 거쳐 특징을 뽑아낸 이미지입니다. 이를 <code>Feature Map</code>이라고 합니다.
-
