@@ -32,4 +32,12 @@
 
 ### CNN
 
+## CNN
+
 일반적으로 3X3 크기의 <code>Filter</code>를 사용해 1칸씩 이동하며 합성곱을 진행합니다. 이 <code>Filter</code>는 <code>Kernel</code>이라고도 부르며, 1칸 이동할지 2칸 이동할지 등 이동하는 간격을 <code>Stride</code>라고 합니다. 스트라이드가 크면 클수록 즉 이동하는 간격이 넓을수록 <code>Convolution</code>이 작을 수밖에 없습니다.
+
+합성곱연산(<code>Convolution</code>)은 이미지의 특징을 뽑아내서 학습에 좋은 이미지를 만드는 것입니다. 저 특징은 <code>Filter(Kernel)</code>에 따라 달라질 수 있고 여러 개의 <code>Filter</code>를 사용합니다. 즉 이미지 한 개가 특징만 추출한 이미지 여러 개로 만들어집니다.
+
+이미지가 여러 개 만들어지기 때문에 너무 많은 양의 데이터가 생성될 수 있는데, 이 문제를 해결하기 위해 이미지 사이즈를 줄입니다. 이것을 <code>Pooling</code>이라고 합니다.
+
+## MAX Pooling
