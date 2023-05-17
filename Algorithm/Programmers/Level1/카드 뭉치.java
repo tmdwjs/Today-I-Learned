@@ -10,6 +10,7 @@ public class 카드뭉치 {
 
         System.out.println(solution(cards1, cards2, goal));
     }
+    
     public static String solution(String[] cards1, String[] cards2, String[] goal) {
         int cards1Idx = 0;
         int cards2Idx = 0;
