@@ -1,3 +1,7 @@
+// 여전히 이해 안 감..
+// 나중에 다시 도전
+// https://school.programmers.co.kr/learn/courses/30/lessons/178870
+
 package programmers.level2;
 
 import java.util.Arrays;
