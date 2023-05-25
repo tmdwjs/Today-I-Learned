@@ -67,7 +67,7 @@ public class 전화번호_목록 {
     }
 }
 
-// 해시를 이용해 한 번 더 풂
+// 2회차(해시)
 
 // https://school.programmers.co.kr/learn/courses/30/lessons/42577
 

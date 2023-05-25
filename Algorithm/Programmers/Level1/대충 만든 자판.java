@@ -55,6 +55,8 @@ public class 대충_만든_자판 {
     }
 }
 
+// 2회차
+
 // https://school.programmers.co.kr/learn/courses/30/lessons/160586
 
 // package programmers.level1;
