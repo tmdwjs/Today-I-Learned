@@ -15,8 +15,8 @@ public class 집합_11723 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
-        StringBuilder sb = new StringBuilder();
 
+        StringBuilder sb = new StringBuilder();
         int bit = 0;
         int cur_n;
 
@@ -33,13 +33,13 @@ public class 집합_11723 {
                     cur_n = Integer.parseInt(actions[1]);
                     bit = bit & ~(1 << (cur_n - 1));
                     break;
-                case "check":
-                    cur_n = Integer.parseInt(actions[1]);
-                    sb.append((bit & (1 << cur_n - 1)) != 0 ? "1\n" : "0\n");
-                    break;
                 case "toggle":
                     cur_n = Integer.parseInt(actions[1]);
                     bit ^= (1 << (cur_n - 1));
+                    break;
+                case "check":
+                    cur_n = Integer.parseInt(actions[1]);
+                    sb.append((bit & (1 << cur_n - 1)) != 0 ? "1\n" : "0\n");
                     break;
                 case "all":
                     bit |= (~0);
@@ -53,6 +53,7 @@ public class 집합_11723 {
         System.out.println(sb.toString());
     }
 }
+
 
 
 // [시도 1] 시간초과
