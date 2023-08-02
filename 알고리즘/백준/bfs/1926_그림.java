@@ -20,8 +20,8 @@ public class 그림_1926 {
         boolean[][] visited = new boolean[n][m]; // 방문 여부
         Queue<Pair> queue = new LinkedList<>(); // 담을 queue(Pair 타입)
 
-        int[] dx = new int[] {1, 0, -1, 0};
-        int[] dy = new int[] {0, 1, 0, -1};
+        int[] dx = new int[] {1, -1, 0, 0};
+        int[] dy = new int[] {0, 0, -1, 1};
 
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
