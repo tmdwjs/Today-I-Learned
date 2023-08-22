@@ -1,4 +1,4 @@
-package baekjoon.linkedlist;
+package 알고리즘.백준.silver;
 
 import java.io.*;
 import java.util.LinkedList;

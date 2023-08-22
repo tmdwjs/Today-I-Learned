@@ -1,5 +1,5 @@
 // 복습
-package 알고리즘.백준.linkedlist;
+package 알고리즘.백준.silver;
 
 import java.io.*;
 import java.util.LinkedList;
