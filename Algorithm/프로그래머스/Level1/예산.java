@@ -1,3 +1,4 @@
+package Algorithm.프로그래머스.Level1;
 // https://school.programmers.co.kr/learn/courses/30/lessons/12982?language=java
 
 import java.util.*;

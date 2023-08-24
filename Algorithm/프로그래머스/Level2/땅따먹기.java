@@ -1,4 +1,4 @@
-package programmers.level2;
+package Algorithm.프로그래머스.Level2;
 
 public class 땅따먹기 {
     public static void main(String[] args) {

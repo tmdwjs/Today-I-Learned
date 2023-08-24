@@ -1,6 +1,6 @@
 // https://www.acmicpc.net/problem/1822
 
-package baekjoon.silver;
+package Algorithm.백준.silver;
 
 import java.io.BufferedReader;
 import java.io.IOException;
