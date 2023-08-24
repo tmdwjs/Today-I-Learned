@@ -1,6 +1,6 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/135808
 
-package Algorithm.프로그래머스.Level1;
+package Algorithm.Programmers.Level1;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

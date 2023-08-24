@@ -2,7 +2,7 @@
 
 // package programmers.level2;
 
-package Algorithm.프로그래머스.Level2;
+package Algorithm.Programmers.Level2;
 
 import java.util.Arrays;
 import java.util.Stack;

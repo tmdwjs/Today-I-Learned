@@ -1,6 +1,6 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/49993
 
-package Algorithm.프로그래머스.Level2;
+package Algorithm.Programmers.Level2;
 
 public class 스킬트리 {
     public static void main(String[] args) {

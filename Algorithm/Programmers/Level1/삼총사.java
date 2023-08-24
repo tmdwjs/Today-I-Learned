@@ -1,4 +1,4 @@
-package Algorithm.프로그래머스.Level1;
+package Algorithm.Programmers.Level1;
 // https://school.programmers.co.kr/learn/courses/30/lessons/131705
 
 class Solution {

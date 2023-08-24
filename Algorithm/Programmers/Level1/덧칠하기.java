@@ -1,6 +1,6 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/161989
 
-package Algorithm.프로그래머스.Level1;
+package Algorithm.Programmers.Level1;
 
 public class 덧칠하기 {
     public static void main(String[] args) {
