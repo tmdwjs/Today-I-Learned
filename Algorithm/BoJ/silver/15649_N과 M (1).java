@@ -1,6 +1,6 @@
 // https://www.acmicpc.net/submit/15649
 
-package baekjoon.backtracking;
+package Algorithm.BoJ.backtracking;
 
 import java.io.BufferedReader;
 import java.io.IOException;
