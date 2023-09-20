@@ -29,7 +29,7 @@ class Solution {
     public void danger(int x, int y, int[][] bombBoard) {
         int bombX = 0;
         int bombY = 0;
-        int[] aroundX = {0, -1, -1, -1,  0, 0,  1, 1, 1};
+        int[] aroundX = {0, -1, -1, -1,  0, 0,  1, 1, 1}; 
         int[] aroundY = {0, -1,  0,  1, -1, 1, -1, 0, 1};
         
         for (int i = 0; i < 9; i++) {
