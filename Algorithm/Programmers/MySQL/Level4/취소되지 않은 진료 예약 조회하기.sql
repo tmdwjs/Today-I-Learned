@@ -1,0 +1,21 @@
+-- https://school.programmers.co.kr/learn/courses/30/lessons/132204
+
+SELECT 
+    A.APNT_NO AS APNT_NO, 
+    B.PT_NAME AS PT_NAME, 
+    B.PT_NO AS PT_NO, 
+    A.MCDP_CD AS MCDP_CD, 
+    C.DR_NAME AS DR_NAME, 
+    A.APNT_YMD AS APNT_YMD
+    
+FROM APPOINTMENT A
+
+LEFT OUTER JOIN PATIENT B
+    ON A.PT_NO = B.PT_NO
+    
+LEFT OUTER JOIN DOCTOR C
+    ON A.MDDR_ID = C.DR_ID
+    
+WHERE APNT_YMD LIKE '%2022-04-13%' AND A.APNT_CNCL_YN = 'N' AND A.MCDP_CD = 'CS'
+
+ORDER BY APNT_YMD
