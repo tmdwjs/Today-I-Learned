@@ -1,0 +1,1 @@
+> UNION, UNION ALL, INTERSECT, EXCEPT에 대해 학습합니다.
