@@ -1,3 +1,5 @@
+SELECT, WHERE과 같은 데이터 추출과 조건절에 대해 학습합니다.
+
 1. dvd 렌탈 업체의 dvd 대여가 있었던 날짜를 확인하세요.
 ```sql
 select distinct date(r.rental_date)
