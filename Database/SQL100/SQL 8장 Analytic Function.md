@@ -21,9 +21,9 @@ select *
 			  		from ( select c2.city_id 			as city_id
 						  		, count (r.rental_id)   as count_rental_city
 						     from rental r 
-						     join customer c on r.customer_id = c.customer_id 
-						     join address  a on c.address_id  = a.address_id 
-						     join city     c2 on a.city_id 	  = c2.city_id
+						     join customer c  on r.customer_id = c.customer_id 
+						     join address  a  on c.address_id  = a.address_id 
+						     join city     c2 on a.city_id 	   = c2.city_id
 						    group by c2.city_id 
 						    order by "count_rental_city" desc
 						    limit 3
@@ -63,7 +63,7 @@ select *
 
 다양한 Analytic Functions 중 랭크를 집계하는 기능은 대표적으로 <code>ROW_NUMBER</code>, <code>RANK</code>, <code>DENSE_RANK</code>가 있습니다. 예를 들어 1부터 10위까지 순위를 부여한다고 가정 시, <code>ROW_NUMBER</code>는 점수가 동일해도 1부터 10까지 차례대로 점수를 부여하고, <code>RANK</code>는 공동으로 점수가 부여되지만, 다음 순위는 이전 순위와 이어지지 않고 공동으로 부여된 순위를 무시합니다(예로 1등, 2등, 2등, 4등, ...). 마지막으로 <code>DENSE_RANK</code>는 공동으로 점수가 부여되며 다음 순위도 이전 순위와 이어 부여됩니다(예로 1등, 2등, 2등, 3등, ...).
 
-다시 문제로 돌아와, 해당 문제는 대여 횟수가 많은 상위 3개 도시를 먼저 구하고, 그 3개 각각의 상위 2개의 카테고리를, 그리고 그 카테고리에서 각각 3개씩의 영화를 출력하기 때문에, 전체 데이터의 수는 3*2*3 해서 최소 18개가 나올 것입니다. 공동으로 순위가 부여되면 18 + a일 테지만, 해당 문제에서는 따로 어떤 Analytic Functions을 사용하란 말이 없어 임의로 중복을 제거하고자 <code>ROW_NUMBER</code>를 사용해 문제를 풀었습니다.
+다시 문제로 돌아와, 해당 문제는 대여 횟수가 많은 상위 3개 도시를 먼저 구하고, 그 3개 각각의 상위 2개의 카테고리를, 그리고 그 카테고리에서 각각 3개씩의 영화를 출력하기 때문에, 전체 데이터의 수는 3 X 2 X 3 해서 최소 18개가 나올 것입니다. 공동으로 순위가 부여되면 18 + a일 테지만, 해당 문제에서는 따로 어떤 Analytic Functions을 사용하란 말이 없어 임의로 중복을 제거하고자 <code>ROW_NUMBER</code>를 사용해 문제를 풀었습니다.
 
 해당 문제는 마냥 
 
